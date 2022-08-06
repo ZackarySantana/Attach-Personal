@@ -37,14 +37,14 @@ const Links: Component = () => {
                 {(link: Link) => (
                     <a href={link.url} target="_blank" class="w-full">
                         <div class="relative w-full h-[60px] link flex items-center pr-4">
-                            <div class="w-[50px] h-[50px] flex items-center justify-center bg-gradient-to-b rounded-lg from-pink-700 to-pink-500">
-                                <div class="p-2.5">
+                            <div class="w-[50px] min-w-[50px] h-[50px] flex items-center justify-center bg-gradient-to-b rounded-lg from-pink-700 to-pink-500">
+                                <div class="p-2">
                                     <img src={link.icon} />
                                 </div>
                             </div>
-                            <div class="leading-5 pl-4">
-                                <h3 class="font-bold">{link.title}</h3>
-                                <p class="text-gray-400 font-medium text-sm">{link.content || link.url}</p>
+                            <div class="w-full overflow-hidden leading-5 pl-4 fadebox">
+                                <h3 class="font-bold whitespace-nowrap">{link.title}</h3>
+                                <p class="text-gray-400 font-medium text-sm whitespace-nowrap">{link.content || link.url}</p>
                             </div>
                             <Arrow />
                         </div>

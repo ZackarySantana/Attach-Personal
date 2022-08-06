@@ -18,3 +18,7 @@
     background: #192734;
     border-radius: 10px;
 }
+
+.fadebox {
+    mask-image: linear-gradient(90deg, #192734 65%, transparent 83%);
+}
