@@ -5,6 +5,9 @@ import Links from './links';
 import Profile from './profile';
 
 const App: Component = () => {
+
+  document.documentElement.classList.add(colors.bg.main);
+
   return (
     <>
       <nav>

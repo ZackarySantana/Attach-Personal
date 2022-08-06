@@ -19,8 +19,11 @@ const Links: Component = () => {
                         <div class="relative w-full h-[60px] flex items-center pr-4">
                             <div class={`absolute inset-[0] left-[25px] z-[-1] rounded-lg ${colors.bg.links}`}></div>
                             <div class={`w-[50px] min-w-[50px] h-[50px] flex items-center justify-center bg-gradient-to-b rounded-lg
-                            ${colors.gradient.from}
-                            ${colors.gradient.to}`}>
+                            ${colors.links_icon['from-transparent'] ? "from-transparent" : ""}
+                            ${colors.links_icon['to-transparent'] ? "to-transparent" : ""}
+                            ${colors.gradient.from != "" && !colors.links_icon['from-transparent'] ? `${colors.gradient.from}` : ""}
+                            ${colors.gradient.to != "" && !colors.links_icon['to-transparent'] ? `${colors.gradient.to}` : ""}
+                            `}>
                                 <div class="p-2">
                                     {link.icon &&
                                         <img src={link.icon} />
