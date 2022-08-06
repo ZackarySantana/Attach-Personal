@@ -90,7 +90,7 @@ const contactMe_linksList = [
 ] as Link[];
 
 /**
- You can customize the order here (if you only want one section, the dropdown will go away and format nicely for one).
+ You can customize the order here (if you only want one section, the dropdown will go away and format nicely)
  */
 export const links = {
     Projects: {
