@@ -22,6 +22,8 @@ Run `npm install`
 
 Most of the customization will happen in [config.ts](./src/config.ts). This has the list of easily customizable things (all colors and gradients). I've made some themes at [color_schemes.ts](./src/color_schemes.ts). By default, the theme is randomly chosen each time the user accesses the website. You can change this functionality in the config!
 
+If you would like to not randomize color schemes, edit the config.ts to directly export the scheme you want (copy and paste from the color_schemes.ts or create your own in config.ts). As well, change [tailwind.config.js](./tailwind.config.js) to \_not\* include the line with `"./src/color_schemes.ts",` so tailwind doesn't compile useless themes
+
 ### `npm dev` or `npm start`
 
 Runs the app in the development mode.<br>
