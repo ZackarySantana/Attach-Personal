@@ -18,6 +18,10 @@ Run `npm install`
 
 ## Development
 
+### Customization
+
+Most of the customization will happen in [config.ts](./src/config.ts). This has the list of easily customizable things (all colors and gradients). I've made some themes at [color_schemes.ts](./src/color_schemes.ts). By default, the theme is randomly chosen each time the user accesses the website. You can change this functionality in the config!
+
 ### `npm dev` or `npm start`
 
 Runs the app in the development mode.<br>
