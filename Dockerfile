@@ -28,7 +28,7 @@ ENV NODE_ENV=production
 
 RUN apt-get upgrade
 
-COPY package.json package-lock.json ./
+COPY package.json package-lock.json host.js ./
 COPY --from=production-deps /app/node_modules /app/node_modules
 COPY --from=build /app/dist /app/dist
 
