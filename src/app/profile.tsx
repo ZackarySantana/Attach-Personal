@@ -51,7 +51,17 @@ const Profile: Component = () => {
                     />
                 </div>
             )}
-            <div class="px-4 pt-1">
+            <div class="relative px-4 pt-1">
+                <button class={`absolute right-[15px] top-[10px] ${colors.bg.profile} drop-shadow-md border-solid border-2 p-2 rounded-full ${colors.banner.border}`} onClick={() => {
+                    let url = document.location.href;
+                    navigator.share({
+                        title: 'web.dev',
+                        text: `Share ${profile.name}'s |attach|`,
+                        url,
+                    });
+                }}>
+                    <Share />
+                </button>
                 <h1 class="text-2xl font-bold">{profile.name}</h1>
                 <h2 class={`text-lg font-medium ${colors.text.subtitle}`}>{profile.subtitle}</h2>
                 <div class={`${colors.text.bio} text-sm leading-4 pl-3 relative`}>
@@ -67,6 +77,12 @@ const Profile: Component = () => {
                 </div>
             </div>
         </div>
+    );
+};
+
+const Share = () => {
+    return (
+        <svg width="16" height="16" viewBox="0 0 16 16" enable-background="new 0 0 24 24" class={`${colors.arrow.fill}`}><path fill-rule="evenodd" clip-rule="evenodd" d="M10.6464 3.85347L11 4.20702L11.7071 3.49992L11.3536 3.14636L8.35355 0.146362H7.64645L4.64645 3.14636L4.29289 3.49992L5 4.20702L5.35355 3.85347L7.5 1.70702V9.49992V9.99992H8.5V9.49992V1.70702L10.6464 3.85347ZM1 5.49994L1.5 4.99994H4V5.99994H2V14.9999H14V5.99994H12V4.99994H14.5L15 5.49994V15.4999L14.5 15.9999H1.5L1 15.4999V5.49994Z"></path></svg>
     );
 };
 
