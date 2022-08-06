@@ -13,6 +13,7 @@ const pinkish = {
         profile: "bg-[#192734]",
         links: "bg-[#192734]",
         main: "bg-[#14202b]",
+        button: "bg-[#223647]",
     },
     skills: {
         bg: "bg-gray-600",
@@ -48,6 +49,7 @@ const blueish = {
         profile: "bg-[#192734]",
         links: "bg-[#192734]",
         main: "bg-[#14202b]",
+        button: "bg-[#223647]",
     },
     skills: {
         bg: "bg-gray-600",
@@ -83,6 +85,7 @@ const dracula = {
         profile: "bg-[#44475a]",
         links: "bg-[#44475a]",
         main: "bg-[#282a36]",
+        button: "bg-[#6272a4]",
     },
     skills: {
         bg: "bg-[#50fa7b]",

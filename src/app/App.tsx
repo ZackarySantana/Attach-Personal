@@ -1,15 +1,21 @@
 import { Component, For } from 'solid-js';
-import { colors, links } from '../config';
+import { colors, sections } from '../config';
+import Button, { ButtonType, isButton } from './button';
 import Links, { Link } from './links';
 import Profile, { Share } from './profile';
 
-export type Links = {
-  [key: string]: {
-    links: Link[];
-    default_opened?: boolean;
-  };
-
+export type Sections = {
+  [key: string]: Links | ButtonType;
 };
+
+export interface Links {
+  links: Link[];
+  default_opened?: boolean;
+}
+
+export function isLinks(obj: any): obj is Links {
+  return obj.links !== undefined;
+}
 
 const App: Component = () => {
 
@@ -27,18 +33,38 @@ const App: Component = () => {
         ${colors.text.base}
       `}>
         <Profile />
-        {Object.keys(links).length > 1 &&
-          <For each={Object.keys(links)}>
-            {(link) => (
-              <Links title={link} linksList={links[link].links} default_opened={links[link].default_opened || false} />
-            )}
+        {Object.keys(sections).length > 1 &&
+          <For each={Object.keys(sections)}>
+            {(sectionName) => {
+              const section = sections[sectionName];
+              if (isButton(section)) {
+                return (
+                  <Button url={section.url} download_name={section.download_name}>{sectionName}</Button>
+                );
+              } else if (isLinks(section)) {
+                return (
+                  <Links title={sectionName} linksList={section.links} default_opened={section.default_opened || false} />
+                );
+              }
+              return <></>;
+            }}
           </For>
         }
-        {Object.keys(links).length == 1 &&
-          <For each={Object.keys(links)}>
-            {(link) => (
-              <Links title={link} linksList={links[link].links} solo={true} default_opened={links[link].default_opened || false} />
-            )}
+        {Object.keys(sections).length == 1 &&
+          <For each={Object.keys(sections)}>
+            {(sectionName) => {
+              const section = sections[sectionName];
+              if (isButton(section)) {
+                return (
+                  <Button url={section.url} download_name={section.download_name}>{sectionName}</Button>
+                );
+              } else if (isLinks(section)) {
+                return (
+                  <Links title={sectionName} linksList={section.links} solo={true} default_opened={true} />
+                );
+              }
+              return <></>;
+            }}
           </For>
         }
         <footer>

@@ -1,4 +1,9 @@
+/* Type Imports */
+import { Sections } from "./app/App";
+import { Link } from "./app/links";
 import { Images } from "./app/profile";
+/* Type Imports */
+
 import profileWebp from "./assets/profile.webp";
 import profilePng from "./assets/profile.png";
 // export { default as bannerWebp } from "./assets/banner.webp";
@@ -20,6 +25,7 @@ export const images = {
     // bannerPng: bannerPng,
 } as Images;
 
+import { getRandom } from "./color_schemes";
 export const colors = getRandom();
 
 export const profile = {
@@ -40,12 +46,10 @@ export const skillsList = [
     "Grafana",
 ];
 
-import { Link } from "./app/links";
 import email from "./assets/icons/email.svg";
 import linkedin from "./assets/icons/linkedin.svg";
 import github from "./assets/icons/github.svg";
-import color_schemes, { getRandom } from "./color_schemes";
-import { Links } from "./app/App";
+import Resume from "./assets/Resume.pdf";
 
 /**
 There are no required links, but each link must have:
@@ -92,7 +96,11 @@ const contactMe_linksList = [
 /**
  You can customize the order here (if you only want one section, the dropdown will go away and format nicely)
  */
-export const links = {
+export const sections = {
+    Resume: {
+        url: Resume,
+        download_name: `${profile.name}_Resume.pdf`,
+    },
     Projects: {
         links: projects_linksList,
         default_opened: true,
@@ -100,4 +108,4 @@ export const links = {
     "Contact Me": {
         links: contactMe_linksList,
     },
-} as Links;
+} as Sections;
