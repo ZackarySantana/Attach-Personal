@@ -1,24 +1,3 @@
-.leftline:before {
-    content: "";
-    position: absolute;
-    top: 11%;
-    left: 5px;
-    width: 2px;
-    height: 80%;
-    background: #ec4899;
-    border-radius: 1px;
-}
-
-.link:before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    left: 25px;
-    z-index: -1;
-    background: #192734;
-    border-radius: 10px;
-}
-
 .fadebox {
-    mask-image: linear-gradient(90deg, #192734 65%, transparent 83%);
+    mask-image: linear-gradient(90deg, var(bg-links) 65%, transparent 83%);
 }

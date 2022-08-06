@@ -1,10 +1,4 @@
-import { Link } from "./app/links";
 import { Images } from "./app/profile";
-
-import email from "./assets/icons/email.svg";
-import linkedin from "./assets/icons/linkedin.svg";
-import github from "./assets/icons/github.svg";
-
 import profileWebp from "./assets/profile.webp";
 import profilePng from "./assets/profile.png";
 // export { default as bannerWebp } from "./assets/banner.webp";
@@ -17,6 +11,36 @@ export const images = {
     // bannerPng: bannerPng,
 } as Images;
 
+export const colors = {
+    text: {
+        base: "text-white",
+        subtitle: "text-slate-400",
+        bio: "text-slate-500",
+        "link-content": "text-gray-400",
+    },
+    bg: {
+        profile: "bg-[#192734]",
+        links: "bg-[#192734]",
+    },
+    skills: {
+        bg: "bg-gray-600",
+        text: "text-white",
+        line: "bg-pink-500",
+    },
+    banner: {
+        border: "border-pink-500",
+        "from-transparent": true,
+        "to-transparent": false,
+    },
+    gradient: {
+        from: "from-pink-700",
+        to: "to-pink-500",
+    },
+    arrow: {
+        fill: "fill-pink-500",
+    },
+};
+
 export const skillsList = [
     "TypeScript",
     "React.js",
@@ -28,6 +52,11 @@ export const skillsList = [
     "Prometheus",
     "Grafana",
 ];
+
+import { Link } from "./app/links";
+import email from "./assets/icons/email.svg";
+import linkedin from "./assets/icons/linkedin.svg";
+import github from "./assets/icons/github.svg";
 
 export const linksList = [
     {
