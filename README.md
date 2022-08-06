@@ -1,18 +1,22 @@
-## Usage
+# | attach |
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
+Attach is a contact sharing website that anyone can fork and customize for their own.
 
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
+-   [Installation](#installation)
+-   [Development](#development)
+-   [Deployment](#deployment)
+    -   [Fly](#fly)
+    -   [Locally](#locally)
+-   [Runtime and Tools](#runtime-and-tools)
+-   [Technologies](#technologies)
+    -   [Frontend](#frontend)
+    -   [Backend](#backend)
 
-```bash
-$ npm install # or pnpm install or yarn install
-```
+## Installation
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+Run `npm install`
 
-## Available Scripts
-
-In the project directory, you can run:
+## Development
 
 ### `npm dev` or `npm start`
 
@@ -21,7 +25,15 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
 
-### `npm run build`
+## Deployment
+
+### Fly
+
+Make sure to install [Fly.io](https://fly.io) and [Docker](https://www.docker.com/), and then run `fly launch`. You should select yes to copy the existing fly.toml (configuration file) to this project, and give it any name you want!
+
+### Locally
+
+#### `npm run build`
 
 Builds the app for production to the `dist` folder.<br>
 It correctly bundles Solid in production mode and optimizes the build for the best performance.
@@ -29,6 +41,25 @@ It correctly bundles Solid in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
-## Deployment
+#### `npm run deploy`
 
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+Runs the app generated in the `dist` folder. This script uses the [host.js](./host.js) file to host all static files in dist on port `4173`.
+
+## Runtime and Tools:
+
+-   [Node](https://nodejs.org/en/) v18.4.0
+-   NPM v8.12.1
+-   [Flyctl](https://fly.io/) (Deployment)
+-   [Docker](https://www.docker.com/) v20.10.16 (Deployment)
+
+## Technologies:
+
+### Frontend:
+
+-   [Solid.js](https://solidjs.com) - Main Framework
+-   [TypeScript](https://www.typescriptlang.org/docs/) - Main language
+-   [Tailwind](https://tailwindcss.com/) - Used in all components
+
+### Backend:
+
+-   [Express](https://expressjs.com/) - Main server that handles all requests to the website
