@@ -1,6 +1,5 @@
 import type { Component } from 'solid-js';
 import { colors } from '../config';
-// import Contact from './contact';
 import Links from './links';
 import Profile from './profile';
 
@@ -17,7 +16,6 @@ const App: Component = () => {
         ${colors.text.base}
       `}>
         <Profile />
-        {/* <Contact /> */}
         <Links />
       </main>
     </>
