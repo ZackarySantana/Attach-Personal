@@ -59,11 +59,18 @@ There are no required links, but each link must have:
  If no icon is supplied, it will use a chain icon by default
  If no content is supplied, it will use the url by default
  */
-export const linksList = [
+const projects_linksList = [
     {
         url: "https://zackaryjamessantana.com/",
         title: "Portfolio",
     },
+    {
+        url: "https://todo.zackaryjamessantana.com/",
+        title: "Todo",
+    },
+] as Link[];
+
+const contactMe_linksList = [
     {
         url: "https://www.linkedin.com/in/zackary-santana/",
         icon: linkedin,
@@ -75,13 +82,27 @@ export const linksList = [
         title: "GitHub",
     },
     {
-        url: "https://todo.zackaryjamessantana.com/",
-        title: "Todo",
-    },
-    {
         url: "mailto: zsant014@fiu.edu",
         title: "Email",
         icon: email,
         content: "zsant014@fiu.edu",
     },
 ] as Link[];
+
+/**
+ You can customize the order here (if you only want one section, the dropdown will go away and format nicely for one).
+ */
+export const links = {
+    Projects: {
+        links: projects_linksList,
+        default_opened: true,
+    },
+    "Contact Me": {
+        links: contactMe_linksList,
+    },
+} as {
+    [key: string]: {
+        links: Link[];
+        default_opened?: boolean;
+    };
+};

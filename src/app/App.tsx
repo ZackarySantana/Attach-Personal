@@ -1,5 +1,5 @@
-import type { Component } from 'solid-js';
-import { colors } from '../config';
+import { Component, For } from 'solid-js';
+import { colors, links } from '../config';
 import Links from './links';
 import Profile from './profile';
 
@@ -16,7 +16,20 @@ const App: Component = () => {
         ${colors.text.base}
       `}>
         <Profile />
-        <Links />
+        {Object.keys(links).length > 1 &&
+          <For each={Object.keys(links)}>
+            {(link) => (
+              <Links title={link} linksList={links[link].links} default_opened={links[link].default_opened || false} />
+            )}
+          </For>
+        }
+        {Object.keys(links).length == 1 &&
+          <For each={Object.keys(links)}>
+            {(link) => (
+              <Links title={link} linksList={links[link].links} solo={true} default_opened={links[link].default_opened || false} />
+            )}
+          </For>
+        }
       </main>
     </>
   );
