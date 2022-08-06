@@ -8,3 +8,13 @@
     background: #ec4899;
     border-radius: 1px;
 }
+
+.link:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    left: 25px;
+    z-index: -1;
+    background: #192734;
+    border-radius: 10px;
+}
