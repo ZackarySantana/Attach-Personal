@@ -1,24 +1,20 @@
 import type { Component } from 'solid-js';
-
-import logo from './logo.svg';
+import Contact from './sections/contact';
+import Links from './sections/links';
+import Profile from './sections/profile';
 
 const App: Component = () => {
   return (
-    <div>
-      <header>
-        <img src={logo} alt="logo" />
-        <p class="text-4xl text-red-400 tracking-widest">
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Solid
-        </a>
-      </header>
-    </div>
+    <>
+      <nav>
+        <a href="https://github.com/ZackarySantana/Attach" target="_blank" class="text-center w-full block text-sm text-[#4ea8ed]">attach</a>
+      </nav>
+      <main>
+        <Profile />
+        <Contact />
+        <Links />
+      </main>
+    </>
   );
 };
 

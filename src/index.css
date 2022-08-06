@@ -1,0 +1,10 @@
+.leftline:before {
+    content: "";
+    position: absolute;
+    top: 11%;
+    left: 5px;
+    width: 2px;
+    height: 80%;
+    background: #ec4899;
+    border-radius: 1px;
+}
