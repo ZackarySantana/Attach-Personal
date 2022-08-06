@@ -5,7 +5,7 @@ import profilePng from "./assets/profile.png";
 // export { default as bannerPng } from "./assets/banner.png";
 
 /*
-Both are optional!
+Both are optional! If you would like neither, just comment out or remove both (but still export images)
 
  - Profile:
    - Dimensions: 120 x 120

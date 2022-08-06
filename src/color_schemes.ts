@@ -1,6 +1,5 @@
 /*
- This is a list of themes that I've premade. To use, copy and paste the theme in to config.ts.
- This file is not looked through by tailwind, so if you change it to export, tailwind will not know to compile these styles.
+ This is a list of themes that I've premade. To use, edit the config.ts file.
 */
 
 const pinkish = {
