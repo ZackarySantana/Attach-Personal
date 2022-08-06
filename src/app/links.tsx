@@ -1,9 +1,11 @@
 import { Component, For } from 'solid-js';
 import { linksList } from '../config';
 
+import attach_logo from "../assets/attach/attach_logo_full_v2.png";
+
 export type Link = {
     url: string;
-    icon: string;
+    icon?: string;
     title: string;
     content?: string;
 };
@@ -17,7 +19,12 @@ const Links: Component = () => {
                         <div class="relative w-full h-[60px] link flex items-center pr-4">
                             <div class="w-[50px] min-w-[50px] h-[50px] flex items-center justify-center bg-gradient-to-b rounded-lg from-pink-700 to-pink-500">
                                 <div class="p-2">
-                                    <img src={link.icon} />
+                                    {link.icon &&
+                                        <img src={link.icon} />
+                                    }
+                                    {!link.icon &&
+                                        <img src={attach_logo} />
+                                    }
                                 </div>
                             </div>
                             <div class="w-full overflow-hidden leading-5 pl-4 fadebox">

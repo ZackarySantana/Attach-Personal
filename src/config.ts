@@ -46,4 +46,8 @@ export const linksList = [
         icon: github,
         title: "GitHub",
     },
+    {
+        url: "https://github.com/ZackarySantana/",
+        title: "GitHub",
+    },
 ] as Link[];
