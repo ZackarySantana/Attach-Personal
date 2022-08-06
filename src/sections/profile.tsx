@@ -17,7 +17,7 @@ const Skills: Component = () => {
         <For each={skillsList}>
             {(item) => (
                 <div class="bg-gray-600 px-2.5 py-1 rounded-full">
-                    <p class="">{item}</p>
+                    <p>{item}</p>
                 </div>
             )}
         </For>
