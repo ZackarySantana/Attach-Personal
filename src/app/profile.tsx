@@ -1,7 +1,7 @@
 import { Component, For } from 'solid-js';
 import Image from './Image';
 
-import { images, skillsList, colors } from '../config';
+import { images, skillsList, colors, profile } from '../config';
 
 export type Images = {
     bannerWebp: string;
@@ -52,13 +52,15 @@ const Profile: Component = () => {
                 </div>
             )}
             <div class="px-4 pt-1">
-                <h1 class="text-2xl font-bold">Zackary Santana</h1>
-                <h2 class={`text-lg font-medium ${colors.text.subtitle}`}>Software Engineer, Fullstack</h2>
+                <h1 class="text-2xl font-bold">{profile.name}</h1>
+                <h2 class={`text-lg font-medium ${colors.text.subtitle}`}>{profile.subtitle}</h2>
                 <div class={`${colors.text.bio} text-sm leading-4 pl-3 relative`}>
                     <div class={`absolute top-[11%] left-[5px] w-[2px] h-[80%] rounded-sm ${colors.skills.line}`}></div>
-                    <p>MongoDB</p>
-                    <p>Miami, FL</p>
-                    <p>Computer Science @ Florida International University</p>
+                    <For each={profile.bio}>
+                        {(bio) => (
+                            <p>{bio}</p>
+                        )}
+                    </For>
                 </div>
                 <div class="flex gap-1 flex-wrap text-xs mt-2.5">
                     <Skills />

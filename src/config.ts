@@ -23,6 +23,12 @@ export const images = {
 export const colors =
     color_schemes[Math.floor(Math.random() * color_schemes.length)];
 
+export const profile = {
+    name: "Zackary Santana",
+    subtitle: "Software Engineer, Fullstack",
+    bio: ["MongoDB", "Miami, FL", "Florida International University"],
+};
+
 export const skillsList = [
     "TypeScript",
     "React.js",
