@@ -1,7 +1,7 @@
 import { Component, For } from 'solid-js';
 import { colors, links } from '../config';
 import Links, { Link } from './links';
-import Profile from './profile';
+import Profile, { Share } from './profile';
 
 export type Links = {
   [key: string]: {
@@ -17,8 +17,11 @@ const App: Component = () => {
 
   return (
     <>
-      <nav>
-        <a href="https://github.com/ZackarySantana/Attach" target="_blank" class="text-center w-full block text-sm text-[#4ea8ed] font-mono">|attach|</a>
+      <nav class="relative">
+        <div class="w-full text-center">
+          <a href="https://github.com/ZackarySantana/Attach" target="_blank" class="text-sm text-[#4ea8ed] font-mono">|attach|</a>
+        </div>
+        <Share class="absolute left-[10px] top-[-9px] block sm:hidden" />
       </nav>
       <main class={`
         ${colors.text.base}
@@ -39,7 +42,7 @@ const App: Component = () => {
           </For>
         }
         <footer>
-          <div class={`px-[40px] flex align-center items-center py-[30px] ${colors.text['link-content']}`}>
+          <div class={`px-[20px] sm:px-[60px] flex align-center items-center py-[30px] ${colors.text['link-content']}`}>
             <a href="https://github.com/ZackarySantana/Attach" target="_blank">
               <p class="text-sm">Putting the power of connecting in to the hands of the user.</p>
               <h3>Click here to make your own <span class="text-[#4ea8ed] font-mono">|attach|</span></h3>
