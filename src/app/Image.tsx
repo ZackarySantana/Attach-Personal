@@ -1,10 +1,10 @@
 export default function Image(
     props: {
-        src: string;
-        srcAlt: string;
+        src: string | undefined;
+        srcAlt: string | undefined;
         alt: string;
         id?: string;
-        className?: string;
+        class?: string;
         loading?: "eager" | "lazy" | undefined;
     },
 ) {
@@ -17,7 +17,7 @@ export default function Image(
                 src={props.srcAlt}
                 alt={props.alt}
                 id={props.id}
-                class={props.className}
+                class={props.class}
             />
         </picture>
     );

@@ -1,34 +1,12 @@
 import { Component, For } from 'solid-js';
+import { linksList } from '../config';
 
-import email from "../assets/icons/email.svg";
-import linkedin from "../assets/icons/linkedin.svg";
-import github from "../assets/icons/github.svg";
-
-type Link = {
+export type Link = {
     url: string;
     icon: string;
     title: string;
     content?: string;
 };
-
-const linksList = [
-    {
-        url: "mailto: zsant014@fiu.edu",
-        title: "Email",
-        icon: email,
-        content: "zsant014@fiu.edu"
-    },
-    {
-        url: "https://www.linkedin.com/in/zackary-santana/",
-        icon: linkedin,
-        title: "LinkedIn"
-    },
-    {
-        url: "https://github.com/ZackarySantana/",
-        icon: github,
-        title: "GitHub"
-    }
-] as Link[];
 
 const Links: Component = () => {
     return (

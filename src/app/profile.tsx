@@ -1,20 +1,14 @@
 import { Component, For } from 'solid-js';
-import Image from '../Image';
+import Image from './Image';
 
-import profileWebp from "../assets/profile.webp";
-import profilePng from "../assets/profile.png";
+import { images, skillsList } from '../config';
 
-const skillsList = [
-    "TypeScript",
-    "React.js",
-    "Express.js",
-    "Node.js",
-    "Golang",
-    "Fly",
-    "Remix.js",
-    "Prometheus",
-    "Grafana"
-];
+export type Images = {
+    bannerWebp: string;
+    bannerPng: string;
+    profileWebp: string;
+    profilePng: string;
+};
 
 const Skills: Component = () => {
     return (
@@ -32,15 +26,25 @@ const Profile: Component = () => {
     return (
         <div class="relative w-full bg-[#192734] pb-4 my-3 rounded-2xl">
             <div class="w-full h-[130px] overflow-hidden rounded-2xl bg-gradient-to-b from-transparent from-pink-900 to-pink-500 border-solid border-2 border-pink-500">
-                {/* <img src="/assets/banner.png" class="block w-full h-full object-cover object-center" /> */}
+                {(images?.bannerPng || images?.bannerWebp) && (
+                    <Image
+                        src={images?.bannerWebp}
+                        srcAlt={images?.bannerPng}
+                        alt="Banner"
+                        class="block w-full h-full object-cover object-center"
+                    />
+                )}
             </div>
-            <div class="absolute top-[20px] left-[15px] overflow-hidden bg-white w-[120px] h-[120px] rounded-full border-solid border-2 border-pink-500">
-                <Image
-                    src={profileWebp}
-                    srcAlt={profilePng}
-                    alt="Profile picture"
-                />
-            </div>
+            {(images?.profilePng || images?.profileWebp) && (
+                <div class="absolute top-[17.5px] left-[15px] overflow-hidden bg-white w-[120px] h-[120px] rounded-full border-solid border-2 border-pink-500">
+                    <Image
+                        src={images.profilePng}
+                        srcAlt={images.profileWebp}
+                        alt="Profile picture"
+                        class="block w-full h-full object-cover object-center"
+                    />
+                </div>
+            )}
             <div class="px-4 pt-1">
                 <h1 class="text-2xl font-bold">Zackary Santana</h1>
                 <h2 class="text-lg font-medium text-[#b9cad3]">Software Engineer, Fullstack</h2>
