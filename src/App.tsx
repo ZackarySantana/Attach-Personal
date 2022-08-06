@@ -11,7 +11,7 @@ const App: Component = () => {
       </nav>
       <main>
         <Profile />
-        <Contact />
+        {/* <Contact /> */}
         <Links />
       </main>
     </>
