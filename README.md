@@ -24,6 +24,8 @@ Most of the customization will happen in [config.ts](./src/config.ts). This has 
 
 If you would like to not randomize color schemes, edit the config.ts to directly export the scheme you want (copy and paste from the color_schemes.ts or create your own in config.ts). As well, change [tailwind.config.js](./tailwind.config.js) to \_not\* include the line with `"./src/color_schemes.ts",` so tailwind doesn't compile useless themes
 
+You can also force a theme (if using the random option) by adding a search parameter (e.g. [https://attach.fly.dev/?scheme=dracula](https://attach.fly.dev/?scheme=dracula))
+
 ### `npm dev` or `npm start`
 
 Runs the app in the development mode.<br>
