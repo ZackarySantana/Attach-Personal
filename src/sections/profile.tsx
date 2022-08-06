@@ -1,6 +1,9 @@
 import { Component, For } from 'solid-js';
 import Image from '../Image';
 
+import profileWebp from "../assets/profile.webp";
+import profilePng from "../assets/profile.png";
+
 const skillsList = [
     "TypeScript",
     "React.js",
@@ -33,8 +36,8 @@ const Profile: Component = () => {
             </div>
             <div class="absolute top-[20px] left-[15px] overflow-hidden bg-white w-[120px] h-[120px] rounded-full border-solid border-2 border-pink-500">
                 <Image
-                    src="/src/assets/profile.webp"
-                    srcAlt="/src/assets/profile.png"
+                    src={profileWebp}
+                    srcAlt={profilePng}
                     alt="Profile picture"
                 />
             </div>

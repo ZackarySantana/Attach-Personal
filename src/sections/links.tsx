@@ -1,8 +1,12 @@
 import { Component, For } from 'solid-js';
 
+import email from "../assets/icons/email.svg";
+import linkedin from "../assets/icons/linkedin.svg";
+import github from "../assets/icons/github.svg";
+
 type Link = {
     url: string;
-    icon?: string;
+    icon: string;
     title: string;
     content?: string;
 };
@@ -11,14 +15,17 @@ const linksList = [
     {
         url: "mailto: zsant014@fiu.edu",
         title: "Email",
+        icon: email,
         content: "zsant014@fiu.edu"
     },
     {
         url: "https://www.linkedin.com/in/zackary-santana/",
+        icon: linkedin,
         title: "LinkedIn"
     },
     {
         url: "https://github.com/ZackarySantana/",
+        icon: github,
         title: "GitHub"
     }
 ] as Link[];
@@ -32,7 +39,7 @@ const Links: Component = () => {
                         <div class="relative w-full h-[60px] link flex items-center pr-4">
                             <div class="w-[50px] h-[50px] flex items-center justify-center bg-gradient-to-b rounded-lg from-pink-700 to-pink-500">
                                 <div class="p-2.5">
-                                    <img src={`/src/assets/icons/${link.icon || (link.title.toLowerCase() + ".svg")}`} />
+                                    <img src={link.icon} />
                                 </div>
                             </div>
                             <div class="leading-5 pl-4">
