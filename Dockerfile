@@ -1,17 +1,17 @@
-FROM node:bullseye-slin as base
+FROM node:bullseye-slim as base
 
 RUN mkdir /app
 WORKDIR /app
 
 FROM base as deps
 
-ADD package.json package-lock.json ./
+COPY package.json package-lock.json ./
 RUN npm install --production=false
 
 # Only the production dependancies
 FROM base as production-deps
 
-ADD package.json package-lock.json ./
+COPY package.json package-lock.json ./
 COPY --from=deps /app/node_modules /app/node_modules
 RUN npm prune --production
 
@@ -19,6 +19,7 @@ RUN npm prune --production
 FROM base as build
 
 COPY --from=deps /app/node_modules /app/node_modules
+COPY . .
 RUN npm run build
 
 # Final production build
@@ -27,8 +28,8 @@ ENV NODE_ENV=production
 
 RUN apt-get upgrade
 
-ADD package.json package-lock.json ./
+COPY package.json package-lock.json ./
 COPY --from=production-deps /app/node_modules /app/node_modules
 COPY --from=build /app/dist /app/dist
 
-CMD ["npm", "run", "serve"]
+CMD ["npm", "run", "deploy"]
