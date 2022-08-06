@@ -11,6 +11,8 @@ app.use(helmet());
 
 app.use("/", (_, res, next) => {
     res.set("Cache-control", "public, max-age=300");
+    res.set("Content-Security-Policy", "default-src 'self' data:");
+
     next();
 });
 
