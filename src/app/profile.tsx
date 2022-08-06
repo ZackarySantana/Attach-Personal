@@ -52,7 +52,7 @@ const Profile: Component = () => {
                 </div>
             )}
             <div class="relative px-4 pt-1">
-                <button class={`absolute right-[15px] top-[10px] ${colors.bg.profile} drop-shadow-md border-solid border-2 p-2 rounded-full ${colors.banner.border}`} onClick={() => {
+                <button class={`absolute transition-all right-[15px] top-[10px] ${colors.bg.profile} border-solid border-2 hover:shadow-[1px_1px_6px_3px_rgba(0,0,0,0.25)] focus:shadow-[inset_1px_1px_3px_2px_rgba(0,0,0,0.25)] p-2 rounded-full ${colors.banner.border} shadow-[1px_1px_3px_2px_rgba(0,0,0,0.25)]`} onClick={() => {
                     let url = document.location.href;
                     navigator.share({
                         title: 'web.dev',
