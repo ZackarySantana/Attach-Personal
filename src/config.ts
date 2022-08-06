@@ -55,10 +55,8 @@ There are no required links, but each link must have:
  */
 export const linksList = [
     {
-        url: "mailto: zsant014@fiu.edu",
-        title: "Email",
-        icon: email,
-        content: "zsant014@fiu.edu",
+        url: "https://zackaryjamessantana.com/",
+        title: "Portfolio",
     },
     {
         url: "https://www.linkedin.com/in/zackary-santana/",
@@ -71,7 +69,13 @@ export const linksList = [
         title: "GitHub",
     },
     {
-        url: "https://github.com/ZackarySantana/",
-        title: "GitHub",
+        url: "https://todo.zackaryjamessantana.com/",
+        title: "Todo",
+    },
+    {
+        url: "mailto: zsant014@fiu.edu",
+        title: "Email",
+        icon: email,
+        content: "zsant014@fiu.edu",
     },
 ] as Link[];
