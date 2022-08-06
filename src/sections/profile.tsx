@@ -1,4 +1,5 @@
 import { Component, For } from 'solid-js';
+import Image from '../Image';
 
 const skillsList = [
     "TypeScript",
@@ -31,7 +32,11 @@ const Profile: Component = () => {
                 {/* <img src="/assets/banner.png" class="block w-full h-full object-cover object-center" /> */}
             </div>
             <div class="absolute top-[20px] left-[15px] overflow-hidden bg-white w-[120px] h-[120px] rounded-full border-solid border-2 border-pink-500">
-                {/* <img src="/assets/profile.png" class="block w-full h-full object-cover object-center" /> */}
+                <Image
+                    src="/src/assets/profile.webp"
+                    srcAlt="/src/assets/profile.png"
+                    alt="Profile picture"
+                />
             </div>
             <div class="px-4 pt-1">
                 <h1 class="text-2xl font-bold">Zackary Santana</h1>
