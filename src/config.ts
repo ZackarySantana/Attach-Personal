@@ -4,6 +4,15 @@ import profilePng from "./assets/profile.png";
 // export { default as bannerWebp } from "./assets/banner.webp";
 // export { default as bannerPng } from "./assets/banner.png";
 
+/*
+Both are optional!
+
+ - Profile:
+   - Dimensions: 120 x 120
+ - Banner:
+   - Dimensions: 320 x 130
+   - This will be resized based on screen size and will focus on the middle of the image
+*/
 export const images = {
     profileWebp: profileWebp,
     profilePng: profilePng,
@@ -32,6 +41,18 @@ import linkedin from "./assets/icons/linkedin.svg";
 import github from "./assets/icons/github.svg";
 import color_schemes from "./color_schemes";
 
+/**
+There are no required links, but each link must have:
+ - url: string;
+ - title: string;
+
+ They can optionally have:
+ - icon: string;
+ - content: string;
+
+ If no icon is supplied, it will use a chain icon by default
+ If no content is supplied, it will use the url by default
+ */
 export const linksList = [
     {
         url: "mailto: zsant014@fiu.edu",
