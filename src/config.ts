@@ -20,8 +20,7 @@ export const images = {
     // bannerPng: bannerPng,
 } as Images;
 
-export const colors =
-    color_schemes[Math.floor(Math.random() * color_schemes.length)];
+export const colors = getRandom();
 
 export const profile = {
     name: "Zackary Santana",
@@ -45,7 +44,7 @@ import { Link } from "./app/links";
 import email from "./assets/icons/email.svg";
 import linkedin from "./assets/icons/linkedin.svg";
 import github from "./assets/icons/github.svg";
-import color_schemes from "./color_schemes";
+import color_schemes, { getRandom } from "./color_schemes";
 import { Links } from "./app/App";
 
 /**

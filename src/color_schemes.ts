@@ -107,4 +107,22 @@ const dracula = {
     },
 };
 
-export default [pinkish, blueish, dracula];
+const schemes = [pinkish, blueish, dracula];
+
+export function getRandom() {
+    const params = new URLSearchParams(document.location.search);
+    const scheme = params.get("scheme");
+    if (scheme != null) {
+        switch (scheme) {
+            case "pinkish":
+                return pinkish;
+            case "blueish":
+                return blueish;
+            case "dracula":
+                return dracula;
+        }
+    }
+    return schemes[Math.floor(Math.random() * schemes.length)];
+}
+
+export default schemes;
