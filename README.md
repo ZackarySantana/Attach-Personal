@@ -1,6 +1,6 @@
 # | attach |
 
-Attach is a contact sharing website that anyone can fork and customize for their own. [Demo](https://attach.fly.dev)
+Attach is a contact sharing website that anyone can fork and customize for their own. Fork this project and set up your own! Here is my personal [demo](https://attach.fly.dev)
 
 -   [Installation](#installation)
 -   [Development](#development)
