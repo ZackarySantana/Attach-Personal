@@ -20,7 +20,7 @@ const Links = (props: { title: string; linksList: Link[]; solo?: boolean; defaul
             {!props.solo &&
                 <div class={`relative w-full h-[60px] flex items-center rounded-lg leading-5 px-4 ${colors.bg.links} select-none cursor-pointer`} onClick={() => setOpen(!open())}>
                     <h1 class="font-bold whitespace-nowrap">{props.title}</h1>
-                    <Arrow class={`transition-all ${open() ? "rotate-[-90deg]" : "rotate-[90deg]"}`} />
+                    <Arrow class={`transition-all duration-[300ms] ${open() ? "rotate-[-90deg]" : "rotate-[90deg]"}`} />
                 </div>
             }
             <div class={`overflow-hidden transition-all duration-[300ms] ${open() ? "mb-3" : ""}`} style={{ "max-height": `${open() ? height : 0}` }}>

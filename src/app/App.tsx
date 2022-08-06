@@ -1,7 +1,15 @@
 import { Component, For } from 'solid-js';
 import { colors, links } from '../config';
-import Links from './links';
+import Links, { Link } from './links';
 import Profile from './profile';
+
+export type Links = {
+  [key: string]: {
+    links: Link[];
+    default_opened?: boolean;
+  };
+
+};
 
 const App: Component = () => {
 

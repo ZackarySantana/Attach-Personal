@@ -46,6 +46,7 @@ import email from "./assets/icons/email.svg";
 import linkedin from "./assets/icons/linkedin.svg";
 import github from "./assets/icons/github.svg";
 import color_schemes from "./color_schemes";
+import { Links } from "./app/App";
 
 /**
 There are no required links, but each link must have:
@@ -100,9 +101,4 @@ export const links = {
     "Contact Me": {
         links: contactMe_linksList,
     },
-} as {
-    [key: string]: {
-        links: Link[];
-        default_opened?: boolean;
-    };
-};
+} as Links;
