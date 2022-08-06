@@ -1,8 +1,8 @@
-/* Type Imports */
+/* Type Imports - DO NOT TOUCH */
 import { Sections } from "./app/App";
 import { Link } from "./app/links";
 import { Images } from "./app/profile";
-/* Type Imports */
+/* Type Imports - DO NOT TOUCH */
 
 import profileWebp from "./assets/profile.webp";
 import profilePng from "./assets/profile.png";
@@ -38,10 +38,23 @@ export const skillsList = [
     "TypeScript",
     "React.js",
     "Express.js",
+    "Remix.js",
+    "Solid.js",
     "Node.js",
+    "Preact.js",
+    "Tailwind",
+    "Fresh",
+    "Deno",
+    "Twind",
+    "Java",
+    "Svelte",
+    "Firebase",
+    "Splunk",
+    "MongoDB",
+    "MySQL",
+    "Docker",
     "Golang",
     "Fly",
-    "Remix.js",
     "Prometheus",
     "Grafana",
 ];
