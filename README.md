@@ -37,7 +37,7 @@ The page will reload if you make edits.<br>
 
 ### Fly
 
-Make sure to install [Fly.io](https://fly.io) and [Docker](https://www.docker.com/). You'll need to setup Fly by following their [docs](https://fly.io/docs/speedrun/), and then run `fly launch`. You should select yes to copy the existing fly.toml (configuration file) to this project, and give it any name you want!
+Make sure to install [Fly.io](https://fly.io) (You don't need Docker to deploy this project!). You'll need to setup Fly by following their [docs](https://fly.io/docs/speedrun/), and then run `fly launch`. You should select yes to copy the existing fly.toml (configuration file) to this project, and give it any name you want!
 
 ### Locally
 
@@ -58,7 +58,7 @@ Runs the app generated in the `dist` folder. This script uses the [host.js](./ho
 -   [Node](https://nodejs.org/en/) v18.4.0
 -   NPM v8.12.1
 -   [Flyctl](https://fly.io/) (Deployment)
--   [Docker](https://www.docker.com/) v20.10.16 (Deployment)
+-   [Docker](https://www.docker.com/) (The project just uses this tool but you don't need it installed locally)
 
 ## Technologies:
 
