@@ -11,40 +11,8 @@ export const images = {
     // bannerPng: bannerPng,
 } as Images;
 
-export const colors = {
-    text: {
-        base: "text-[#f8f8f2]",
-        subtitle: "text-[#6272a4]",
-        bio: "text-[#6272a4]",
-        "link-content": "text-[#6272a4]",
-    },
-    bg: {
-        profile: "bg-[#44475a]",
-        links: "bg-[#44475a]",
-        main: "bg-[#282a36]",
-    },
-    skills: {
-        bg: "bg-[#50fa7b]",
-        text: "text-[#44475a]",
-        line: "bg-[#bd93f9]",
-    },
-    banner: {
-        border: "border-[#bd93f9]",
-        "from-transparent": true,
-        "to-transparent": false,
-    },
-    links_icon: {
-        "from-transparent": false,
-        "to-transparent": false,
-    },
-    gradient: {
-        from: "from-[#bd93f9]",
-        to: "to-[#bd93f9]",
-    },
-    arrow: {
-        fill: "fill-[#50fa7b]",
-    },
-};
+export const colors =
+    color_schemes[Math.floor(Math.random() * color_schemes.length)];
 
 export const skillsList = [
     "TypeScript",
@@ -62,6 +30,7 @@ import { Link } from "./app/links";
 import email from "./assets/icons/email.svg";
 import linkedin from "./assets/icons/linkedin.svg";
 import github from "./assets/icons/github.svg";
+import color_schemes from "./color_schemes";
 
 export const linksList = [
     {

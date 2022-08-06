@@ -108,4 +108,4 @@ const dracula = {
     },
 };
 
-export {};
+export default [pinkish, blueish, dracula];
