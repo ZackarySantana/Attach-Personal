@@ -128,7 +128,7 @@ const dracula = {
         base: "text-[#f8f8f2]",
         subtitle: "text-[#6272a4]",
         bio: "text-[#6272a4]",
-        button: "text-[#6272a4]",
+        button: "text-[#f8f8f2]",
         "link-content": "text-[#6272a4]",
     },
     bg: {
@@ -267,11 +267,13 @@ function fromParams(params: URLSearchParams) {
     return null;
 }
 
-export function getRandomTheme() {
+export function getRandomTheme(force = true) {
     const params = new URLSearchParams(document.location.search);
-    const forced = fromParams(params);
-    if (forced != null) {
-        return forced;
+    if (force) {
+        const forced = fromParams(params);
+        if (forced != null) {
+            return forced;
+        }
     }
     if (params.get("funky") == "true") {
         return funky[Math.floor(Math.random() * funky.length)];
@@ -279,11 +281,13 @@ export function getRandomTheme() {
     return themes[Math.floor(Math.random() * themes.length)];
 }
 
-export function getRandomFunkyTheme() {
-    const params = new URLSearchParams(document.location.search);
-    const forced = fromParams(params);
-    if (forced != null) {
-        return forced;
+export function getRandomFunkyTheme(force = true) {
+    if (force) {
+        const params = new URLSearchParams(document.location.search);
+        const forced = fromParams(params);
+        if (forced != null) {
+            return forced;
+        }
     }
     return funky[Math.floor(Math.random() * funky.length)];
 }

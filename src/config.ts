@@ -27,6 +27,7 @@ export const images = {
 
 import { getRandomTheme } from "./color_themes";
 export const colors = getRandomTheme();
+export const random_theme_button = true;
 
 export const profile = {
     name: "Zackary Santana",
