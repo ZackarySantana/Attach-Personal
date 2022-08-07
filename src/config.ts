@@ -96,7 +96,11 @@ const projects_linksList = [
 const experiences = [
     {
         company: "MongoDB",
-        meta: ["Jun 2022 - Aug 2022", "New York, New York"],
+        meta: [
+            "Software Engineer Intern",
+            "Jun 2022 - Aug 2022",
+            "New York, New York",
+        ],
         desc: [
             "Worked on a scrum (agile) team for MongoDB's internal CI/CD testing tool, Evergreen (https://github.com/evergreen-ci/evergreen).",
             "Used Golang to create new REST endpoints, manage existing ones, and create middleware.",
@@ -107,7 +111,11 @@ const experiences = [
     },
     {
         company: "MetLife",
-        meta: ["Jun 2021 - Aug 2021", "Cary, North Carolina"],
+        meta: [
+            "Software Engineer Intern",
+            "Jun 2021 - Aug 2021",
+            "Cary, North Carolina",
+        ],
         desc: [
             "Managed and maintained a frontend Angular.js application that displayed real-time information that was vital for the team.",
             "Organized the backend Restify that interacted with a MongoDB that used endpoints to test status of Java Virtual Machines.",
