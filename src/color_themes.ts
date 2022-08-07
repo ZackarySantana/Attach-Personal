@@ -8,6 +8,7 @@ const pinkish = {
         base: "text-white",
         subtitle: "text-slate-400",
         bio: "text-slate-500",
+        button: "text-white",
         "link-content": "text-gray-400",
     },
     bg: {
@@ -47,6 +48,7 @@ const blueish = {
         base: "text-white",
         subtitle: "text-slate-400",
         bio: "text-slate-500",
+        button: "text-white",
         "link-content": "text-gray-400",
     },
     bg: {
@@ -86,6 +88,7 @@ const ocean = {
         base: "text-white",
         subtitle: "text-slate-200",
         bio: "text-[#E7F6F2]",
+        button: "text-white",
         "link-content": "text-gray-400",
     },
     bg: {
@@ -119,51 +122,13 @@ const ocean = {
     },
 };
 
-const firery = {
-    name: "Firery",
-    text: {
-        base: "text-[#white]",
-        subtitle: "text-[#FF0000]",
-        bio: "text-[#FF0000]",
-        "link-content": "text-[#FF0000]",
-    },
-    bg: {
-        profile: "bg-[#111111]",
-        links: "bg-[#111111]",
-        mask_links: "mask-image-[#111111]", // This should be the same as 'links'. This is to allow for disappearing text for short devices.
-        main: "bg-[#000000]",
-        button: "bg-[#950101]",
-    },
-    skills: {
-        bg: "bg-[#3D0000]",
-        text: "text-white",
-        line: "bg-[#FF0000]",
-    },
-    banner: {
-        border: "border-[#950101]",
-        "from-transparent": true,
-        "to-transparent": false,
-    },
-    links_icon: {
-        "from-transparent": false,
-        "to-transparent": false,
-    },
-    gradient: {
-        from: "from-[#3D0000]",
-        to: "to-[#3D0000]",
-    },
-    arrow: {
-        expand: "fill-[#FF0000]",
-        download: "fill-white",
-    },
-};
-
 const dracula = {
     name: "Dracula",
     text: {
         base: "text-[#f8f8f2]",
         subtitle: "text-[#6272a4]",
         bio: "text-[#6272a4]",
+        button: "text-[#6272a4]",
         "link-content": "text-[#6272a4]",
     },
     bg: {
@@ -197,23 +162,106 @@ const dracula = {
     },
 };
 
-const themes = [pinkish, blueish, ocean, dracula];
+const light_fire = {
+    name: "Light Fire",
+    text: {
+        base: "text-black",
+        subtitle: "text-black",
+        bio: "text-black",
+        button: "text-white",
+        "link-content": "text-gray-800",
+    },
+    bg: {
+        profile: "bg-gray-100",
+        links: "bg-gray-100",
+        mask_links: "mask-image-gray-100", // This should be the same as 'links'. This is to allow for disappearing text for short devices.
+        main: "bg-white",
+        button: "bg-[#e23a4d]",
+    },
+    skills: {
+        bg: "bg-[#e23a4d]",
+        text: "text-white",
+        line: "bg-[#e23a4d]",
+    },
+    banner: {
+        border: "border-[#e23a4d]",
+        "from-transparent": true,
+        "to-transparent": false,
+    },
+    links_icon: {
+        "from-transparent": false,
+        "to-transparent": false,
+    },
+    gradient: {
+        from: "from-[#e23a4d]",
+        to: "to-[#e23a4d]",
+    },
+    arrow: {
+        expand: "fill-[#e23a4d]",
+        download: "fill-white",
+    },
+};
+
+const firery = {
+    name: "Firery",
+    text: {
+        base: "text-white",
+        subtitle: "text-[#FF0000]",
+        bio: "text-[#FF0000]",
+        button: "text-white",
+        "link-content": "text-[#FF0000]",
+    },
+    bg: {
+        profile: "bg-[#111111]",
+        links: "bg-[#111111]",
+        mask_links: "mask-image-[#111111]", // This should be the same as 'links'. This is to allow for disappearing text for short devices.
+        main: "bg-[#000000]",
+        button: "bg-[#950101]",
+    },
+    skills: {
+        bg: "bg-[#3D0000]",
+        text: "text-white",
+        line: "bg-[#FF0000]",
+    },
+    banner: {
+        border: "border-[#950101]",
+        "from-transparent": true,
+        "to-transparent": false,
+    },
+    links_icon: {
+        "from-transparent": false,
+        "to-transparent": false,
+    },
+    gradient: {
+        from: "from-[#3D0000]",
+        to: "to-[#3D0000]",
+    },
+    arrow: {
+        expand: "fill-[#FF0000]",
+        download: "fill-white",
+    },
+};
+
+const themes = [pinkish, blueish, ocean, dracula, light_fire];
 const funky = [...themes, firery];
 
 function fromParams(params: URLSearchParams) {
     const theme = params.get("theme");
     if (theme != null) {
-        switch (theme) {
+        switch (theme.toLowerCase()) {
             case "pinkish":
                 return pinkish;
             case "blueish":
                 return blueish;
             case "ocean":
                 return ocean;
-            case "firery":
-                return firery;
             case "dracula":
                 return dracula;
+            case "light_fire":
+            case "lightfire":
+                return light_fire;
+            case "firery":
+                return firery;
         }
     }
     return null;

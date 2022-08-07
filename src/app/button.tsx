@@ -10,11 +10,10 @@ export function isButton(obj: any): obj is ButtonType {
 }
 
 const Button = (props: { url: string; download_name: string; children: string; }) => {
-    console.log("TEST");
     return (
         <div class="pb-3 flex gap-3 justify-center">
             <a href={props.url} target="_blank" class="w-[80%]">
-                <div class={`w-full h-[50px] flex items-center justify-center rounded-lg leading-5 px-4 ${colors.bg.button} transition-all
+                <div class={`w-full h-[50px] flex items-center justify-center rounded-lg leading-5 px-4 ${colors.bg.button} ${colors.text.button} transition-all
                     hover:shadow-[1px_1px_2px_4px_rgba(0,0,0,0.25)] active:shadow-[inset_1px_1px_0px_2px_rgba(0,0,0,0.5)] shadow-[1px_1px_0px_2px_rgba(0,0,0,0.1)]`}>
                     <h1 class="font-bold whitespace-nowrap">{props.children}</h1>
                 </div>
