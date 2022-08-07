@@ -140,3 +140,9 @@ export const sections = {
         links: contactMe_linksList,
     },
 } as Sections;
+
+export const webpage_config = {
+    title: `${profile.name}'s |attach|`,
+    desc: `An |attach| for ${profile.name}`,
+    keywords: `New Grad, Portfolio, Projects, Web Development, Node.js, React.js, Remix.js, CSS, Developer, Coder, Programmer, Programming, Languages, Software, ${profile.name}`,
+};

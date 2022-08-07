@@ -1,5 +1,5 @@
 import { Component, For } from 'solid-js';
-import { colors, sections } from '../config';
+import { colors, sections, webpage_config } from '../config';
 import Button, { ButtonType, isButton } from './button';
 import Links, { Link } from './links';
 import Profile, { Share } from './profile';
@@ -20,6 +20,21 @@ export function isLinks(obj: any): obj is Links {
 const App: Component = () => {
 
   document.documentElement.classList.add(colors.bg.main);
+
+  const title = document.createElement("title");
+  title.innerHTML = webpage_config.title;
+
+  const desc = document.createElement("meta");
+  desc.setAttribute("name", "description");
+  desc.setAttribute("content", webpage_config.desc);
+
+  const keywords = document.createElement("meta");
+  keywords.setAttribute("name", "keywords");
+  keywords.setAttribute("content", webpage_config.keywords);
+
+  document.head.appendChild(title);
+  document.head.appendChild(desc);
+  document.head.appendChild(keywords);
 
   return (
     <>
