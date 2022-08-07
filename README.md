@@ -14,7 +14,15 @@ Attach is a contact sharing website that anyone can fork and customize for their
 
 ## Installation
 
-Run `npm install`
+Install [pre-reqs](#runtime-and-tools)
+
+Then:
+
+```
+Run `git clone https://github.com/ZackarySantana/Attach.git attach` or `git clone git@github.com:ZackarySantana/Attach.git attach`
+Run `npm install` in the 'attach' directory
+Run `fly launch` in the 'attach' directory
+```
 
 ## Development
 
@@ -55,12 +63,16 @@ Runs the app generated in the `dist` folder. This script uses the [host.js](./ho
 
 ## Runtime and Tools:
 
+To install:
+
 -   [Node](https://nodejs.org/en/) v18.4.0
 -   NPM v8.12.1
 -   [Flyctl](https://fly.io/) (Deployment)
 -   [Docker](https://www.docker.com/) (The project just uses this tool but you don't need it installed locally)
 
 ## Technologies:
+
+No need to try installing these, these are installed automatically when running `npm install`
 
 ### Frontend:
 
