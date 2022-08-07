@@ -1,12 +1,18 @@
 import { Component, For } from 'solid-js';
 import { colors, sections, webpage_config } from '../config';
 import Button, { ButtonType, isButton } from './button';
+import Experiences, { Experience } from './experinces';
 import Links, { Link } from './links';
 import Profile, { Share, ThemeSwitch } from './profile';
 
 export type Sections = {
-  [key: string]: Links | ButtonType;
+  [key: string]: Links | Experiences | ButtonType;
 };
+
+export interface Experiences {
+  experiences: Experience[];
+  default_opened?: boolean;
+}
 
 export interface Links {
   links: Link[];
@@ -15,6 +21,10 @@ export interface Links {
 
 export function isLinks(obj: any): obj is Links {
   return obj.links !== undefined;
+}
+
+export function isExperiences(obj: any): obj is Experiences {
+  return obj.experiences !== undefined;
 }
 
 const App: Component = () => {
@@ -61,6 +71,10 @@ const App: Component = () => {
                 return (
                   <Links title={sectionName} linksList={section.links} default_opened={section.default_opened || false} />
                 );
+              } else if (isExperiences(section)) {
+                return (
+                  <Experiences title={sectionName} experiences={section.experiences} default_opened={section.default_opened || false} />
+                );
               }
               return <></>;
             }}
@@ -77,6 +91,10 @@ const App: Component = () => {
               } else if (isLinks(section)) {
                 return (
                   <Links title={sectionName} linksList={section.links} solo={true} default_opened={true} />
+                );
+              } else if (isExperiences(section)) {
+                return (
+                  <Experiences title={sectionName} experiences={section.experiences} solo={true} default_opened={true} />
                 );
               }
               return <></>;

@@ -1,6 +1,7 @@
 /* Type Imports - DO NOT TOUCH */
 import { Sections } from "./app/App";
 import { Link } from "./app/links";
+import { Experience } from "./app/experinces";
 import { Images } from "./app/profile";
 /* Type Imports - DO NOT TOUCH */
 
@@ -92,6 +93,29 @@ const projects_linksList = [
     },
 ] as Link[];
 
+const experiences = [
+    {
+        company: "MongoDB",
+        meta: ["Jun 2022 - Aug 2022", "New York, New York"],
+        desc: [
+            "Worked on a scrum (agile) team for MongoDB's internal CI/CD testing tool, Evergreen (https://github.com/evergreen-ci/evergreen).",
+            "Used Golang to create new REST endpoints, manage existing ones, and create middleware.",
+            "Augmented the CLI to allow users to do actions that were previously restricted like using regex to find what tests to do on which builds and run that test-suite.",
+            "Modified core infrastructure of archiving tests and scheduling/restarting logic of tests.",
+            "Created new functionality that restarts a subset of tests for the user and systematically keeps track of non-restarted and restarted tests for the same test-suite.",
+        ],
+    },
+    {
+        company: "MetLife",
+        meta: ["Jun 2021 - Aug 2021", "Cary, North Carolina"],
+        desc: [
+            "Managed and maintained a frontend Angular.js application that displayed real-time information that was vital for the team.",
+            "Organized the backend Restify that interacted with a MongoDB that used endpoints to test status of Java Virtual Machines.",
+            "Worked in a SAFe Agile team that used scrum to keep track with the day-to-day process.",
+        ],
+    },
+] as Experience[];
+
 const games_linksList = [
     {
         url: "https://zackaryjamessantana.com/hosted_projects/rpg.html",
@@ -126,13 +150,19 @@ const contactMe_linksList = [
  You can customize the order here (if you only want one section, the dropdown will go away and format nicely)
  */
 export const sections = {
+    // An example of a button. This button is a resume download
     Resume: {
         url: Resume,
         download_name: `${profile.name}_Resume.pdf`,
     },
+    // An example of a list of projects, that is opened on load
     Projects: {
         links: projects_linksList,
         default_opened: true,
+    },
+    // An example of an experience section
+    "Work Experience": {
+        experiences: experiences,
     },
     Games: {
         links: games_linksList,
