@@ -85,6 +85,21 @@ const projects_linksList = [
         url: "https://todo.zackaryjamessantana.com/",
         title: "Todo",
     },
+    {
+        url: "https://twitterst.fly.dev/",
+        title: "Twitter Filter",
+    },
+] as Link[];
+
+const games_linksList = [
+    {
+        url: "https://zackaryjamessantana.com/hosted_projects/rpg.html",
+        title: "RPG",
+    },
+    {
+        url: "https://videos.zackaryjamessantana.com/spacefrontier/",
+        title: "Space Frontier",
+    },
 ] as Link[];
 
 const contactMe_linksList = [
@@ -117,6 +132,9 @@ export const sections = {
     Projects: {
         links: projects_linksList,
         default_opened: true,
+    },
+    Games: {
+        links: games_linksList,
     },
     "Contact Me": {
         links: contactMe_linksList,
