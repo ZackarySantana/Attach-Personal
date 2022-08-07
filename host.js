@@ -10,7 +10,7 @@ app.use(compression());
 app.use(helmet());
 
 app.use("/", (_, res, next) => {
-    res.set("Cache-control", "public, max-age=300");
+    res.set("Cache-control", "public, max-age=14400"); // 14400s = 60s/m * 60m/h * 4h
     res.set("Content-Security-Policy", "default-src 'self' data:");
 
     next();
