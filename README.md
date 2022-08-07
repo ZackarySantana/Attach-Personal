@@ -18,12 +18,37 @@ Install [pre-reqs](#runtime-and-tools)
 
 Then:
 
+Run
+
 ```
-Run `git clone https://github.com/ZackarySantana/Attach.git attach`
-  - if it doesn't work, run `git clone git@github.com:ZackarySantana/Attach.git attach`
-Run `npm install` in the 'attach' directory
-Run `fly launch` in the 'attach' directory
+git clone https://github.com/ZackarySantana/Attach.git attach
 ```
+
+If it doesn't work, run
+
+```
+git clone git@github.com:ZackarySantana/Attach.git attach
+```
+
+Then make sure to cd (change directory) in to the attach folder
+
+```
+cd attach
+```
+
+Install the [technologies](#technologies) by running
+
+```
+npm install
+```
+
+And deploy to the web with
+
+```
+fly launch
+```
+
+For more info on deploying, head to [deploy with fly](#fly)
 
 ## Development
 
@@ -84,3 +109,11 @@ No need to try installing these, these are installed automatically when running 
 ### Backend:
 
 -   [Express](https://expressjs.com/) - Main server that handles all requests to the website
+
+```
+
+```
+
+```
+
+```
