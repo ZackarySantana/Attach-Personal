@@ -2,6 +2,8 @@
  This is a list of themes that I've premade. To use, edit the config.ts file.
 */
 
+import { colors } from "./config";
+
 const pinkish = {
     name: "Pinkish",
     text: {
@@ -284,12 +286,18 @@ export function getRandomTheme(force = true) {
     return themes[Math.floor(Math.random() * themes.length)];
 }
 
-export function getRandomFunkyTheme(force = true) {
+export function getRandomFunkyTheme(force = true, excludeCurrent = false) {
     if (force) {
         const params = new URLSearchParams(document.location.search);
         const forced = fromParams(params);
         if (forced != null) {
             return forced;
+        }
+    }
+    if (excludeCurrent) {
+        const sub = funky.filter((c) => c.name != colors.name);
+        if (sub.length > 0) {
+            return sub[Math.floor(Math.random() * sub.length)];
         }
     }
     return funky[Math.floor(Math.random() * funky.length)];
