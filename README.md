@@ -19,7 +19,8 @@ Install [pre-reqs](#runtime-and-tools)
 Then:
 
 ```
-Run `git clone https://github.com/ZackarySantana/Attach.git attach` or `git clone git@github.com:ZackarySantana/Attach.git attach`
+Run `git clone https://github.com/ZackarySantana/Attach.git attach`
+  - if it doesn't work, run `git clone git@github.com:ZackarySantana/Attach.git attach`
 Run `npm install` in the 'attach' directory
 Run `fly launch` in the 'attach' directory
 ```
