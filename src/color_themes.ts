@@ -248,7 +248,9 @@ const funky = [...themes, firery];
 function fromParams(params: URLSearchParams) {
     const theme = params.get("theme");
     if (theme != null) {
-        switch (theme.toLowerCase()) {
+        console.log(decodeURIComponent(theme.toLowerCase()));
+
+        switch (decodeURIComponent(theme.toLowerCase())) {
             case "pinkish":
                 return pinkish;
             case "blueish":
@@ -258,6 +260,7 @@ function fromParams(params: URLSearchParams) {
             case "dracula":
                 return dracula;
             case "light_fire":
+            case "light fire":
             case "lightfire":
                 return light_fire;
             case "firery":
