@@ -1,7 +1,3 @@
-.fadebox {
-    mask-image: linear-gradient(90deg, var(bg-links) 65%, transparent 83%);
-}
-
 .html-scrollbar-adjust {
     margin-right: calc(-1 * (100vw - 100%));
 }

@@ -1,6 +1,6 @@
 # | attach |
 
-Attach is a contact sharing website that anyone can fork and customize for their own. Fork this project and set up your own! Here is my personal [demo](https://attach.fly.dev)
+| attach | is a contact sharing website that anyone can fork and customize for their own. Fork this project and set up your own! Here is my personal [demo](https://attach.fly.dev)
 
 -   [Installation](#installation)
 -   [Development](#development)
@@ -93,9 +93,17 @@ Runs the app generated in the `dist` folder. This script uses the [host.js](./ho
 
 To install:
 
+-   [Git](https://git-scm.com/) (Installation)
+-   [Visual Studio Code](https://code.visualstudio.com/) (Recommended code editor)
 -   [Node](https://nodejs.org/en/) v18.4.0
--   NPM v8.12.1
--   [Flyctl](https://fly.io/) (Deployment)
+-   NPM v8.12.1 (comes with Node!)
+-   [Flyctl](https://fly.io/docs/speedrun/) (Deployment, only steps 1 and 2)
+
+If you have a mac, I recommend you install [homebrew](https://brew.sh/) and then run the following to install everything:
+
+```
+brew install git visual-studio-code node flyctl
+```
 
 Don't have to install:
 
@@ -114,11 +122,3 @@ No need to try installing these, these are installed automatically when running 
 ### Backend:
 
 -   [Express](https://expressjs.com/) - Main server that handles all requests to the website
-
-```
-
-```
-
-```
-
-```

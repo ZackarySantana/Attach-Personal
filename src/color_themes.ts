@@ -13,6 +13,7 @@ const pinkish = {
     bg: {
         profile: "bg-[#192734]",
         links: "bg-[#192734]",
+        mask_links: "mask-image-[#192734]", // This should be the same as 'links'. This is to allow for disappearing text for short devices.
         main: "bg-[#14202b]",
         button: "bg-[#223647]",
     },
@@ -51,6 +52,7 @@ const blueish = {
     bg: {
         profile: "bg-[#192734]",
         links: "bg-[#192734]",
+        mask_links: "mask-image-[#192734]", // This should be the same as 'links'. This is to allow for disappearing text for short devices.
         main: "bg-[#14202b]",
         button: "bg-[#223647]",
     },
@@ -89,6 +91,7 @@ const ocean = {
     bg: {
         profile: "bg-[#395B64]",
         links: "bg-[#395B64]",
+        mask_links: "mask-image-[#395B64]", // This should be the same as 'links'. This is to allow for disappearing text for short devices.
         main: "bg-[#2C3333]",
         button: "bg-[#497480]",
     },
@@ -127,6 +130,7 @@ const firery = {
     bg: {
         profile: "bg-[#111111]",
         links: "bg-[#111111]",
+        mask_links: "mask-image-[#111111]", // This should be the same as 'links'. This is to allow for disappearing text for short devices.
         main: "bg-[#000000]",
         button: "bg-[#950101]",
     },
@@ -165,6 +169,7 @@ const dracula = {
     bg: {
         profile: "bg-[#44475a]",
         links: "bg-[#44475a]",
+        mask_links: "mask-image-[#44475a]", // This should be the same as 'links'. This is to allow for disappearing text for short devices.
         main: "bg-[#282a36]",
         button: "bg-[#6272a4]",
     },

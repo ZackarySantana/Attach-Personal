@@ -45,7 +45,7 @@ const Links = (props: { title: string; linksList: Link[]; solo?: boolean; defaul
                                             }
                                         </div>
                                     </div>
-                                    <div class="w-full overflow-hidden leading-5 pl-4 fadebox">
+                                    <div class={`w-full overflow-hidden leading-5 pl-4 ${colors.bg.mask_links}`}>
                                         <h3 class="font-bold whitespace-nowrap">{link.title}</h3>
                                         <p class={`${colors.text['link-content']} font-medium text-sm whitespace-nowrap`}>{link.content || link.url}</p>
                                     </div>
