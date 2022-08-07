@@ -158,7 +158,7 @@ const dracula = {
     },
     arrow: {
         expand: "fill-[#50fa7b]",
-        download: "fill-[#50fa7b]",
+        download: "fill-white",
     },
 };
 
