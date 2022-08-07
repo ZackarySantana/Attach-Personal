@@ -50,7 +50,7 @@ const App: Component = () => {
     <>
       <nav class="relative">
         <div class="w-full text-center">
-          <a href="/" target="_blank" class="text-sm text-[#4ea8ed] font-mono">|attach|</a>
+          <a href="/" class="text-sm text-[#4ea8ed] font-mono">|attach|</a>
         </div>
         <Share class="absolute left-[10px] top-[-9px] block sm:hidden" />
         <ThemeSwitch class="absolute right-[10px] top-[-9px] block sm:hidden" />
