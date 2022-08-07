@@ -2,7 +2,7 @@ import { Component, For } from 'solid-js';
 import { colors, sections, webpage_config } from '../config';
 import Button, { ButtonType, isButton } from './button';
 import Links, { Link } from './links';
-import Profile, { Share } from './profile';
+import Profile, { Share, ThemeSwitch } from './profile';
 
 export type Sections = {
   [key: string]: Links | ButtonType;
@@ -43,6 +43,7 @@ const App: Component = () => {
           <a href="https://github.com/ZackarySantana/Attach" target="_blank" class="text-sm text-[#4ea8ed] font-mono">|attach|</a>
         </div>
         <Share class="absolute left-[10px] top-[-9px] block sm:hidden" />
+        <ThemeSwitch class="absolute right-[10px] top-[-9px] block sm:hidden" />
       </nav>
       <main class={`
         ${colors.text.base}
