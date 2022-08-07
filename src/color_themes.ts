@@ -36,7 +36,7 @@ const pinkish = {
     },
     arrow: {
         expand: "fill-pink-500",
-        download: "fill-pink-500",
+        download: "fill-white",
     },
 };
 
@@ -74,7 +74,7 @@ const blueish = {
     },
     arrow: {
         expand: "fill-blue-500",
-        download: "fill-blue-500",
+        download: "fill-white",
     },
 };
 
