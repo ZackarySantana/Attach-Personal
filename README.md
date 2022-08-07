@@ -54,11 +54,13 @@ For more info on deploying, head to [deploy with fly](#fly)
 
 ### Customization
 
-Most of the customization will happen in [config.ts](./src/config.ts). This has the list of easily customizable things (all colors and gradients). I've made some themes at [color_schemes.ts](./src/color_schemes.ts). By default, the theme is randomly chosen each time the user accesses the website. You can change this functionality in the config!
+Most of the customization will happen in [config.ts](./src/config.ts). This has the list of easily customizable things (all colors and gradients). I've made some themes at [color_themes.ts](./src/color_themes.ts). By default, the theme is randomly chosen each time the user accesses the website. You can change this functionality in the config!
 
-If you would like to not randomize color schemes, edit the config.ts to directly export the scheme you want (copy and paste from the color_schemes.ts or create your own in config.ts). As well, change [tailwind.config.js](./tailwind.config.js) to \_not\* include the line with `"./src/color_schemes.ts",` so tailwind doesn't compile useless themes
+If you would like to not randomize color themes, edit the config.ts to directly export the theme you want (copy and paste from the color_themes.ts or create your own in config.ts). As well, change [tailwind.config.js](./tailwind.config.js) to \_not\* include the line with `"./src/color_themes.ts",` so tailwind doesn't compile useless themes
 
-You can also force a theme (if using the random option) by adding a search parameter (e.g. [https://attach.fly.dev/?scheme=dracula](https://attach.fly.dev/?scheme=dracula))
+You can also force a theme (if using the random option) by adding a search parameter (e.g. [https://attach.fly.dev/?theme=dracula](https://attach.fly.dev/?theme=dracula))
+
+There's an additional, funky option you can add for themes that don't _fit_ the status quote (e.g. [https://attach.fly.dev/?funky=true](https://attach.fly.dev/?funky=true))
 
 ### `npm dev` or `npm start`
 
@@ -94,6 +96,9 @@ To install:
 -   [Node](https://nodejs.org/en/) v18.4.0
 -   NPM v8.12.1
 -   [Flyctl](https://fly.io/) (Deployment)
+
+Don't have to install:
+
 -   [Docker](https://www.docker.com/) (The project just uses this tool but you don't need it installed locally)
 
 ## Technologies:

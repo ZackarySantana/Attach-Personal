@@ -25,8 +25,8 @@ export const images = {
     // bannerPng: bannerPng,
 } as Images;
 
-import { getRandom } from "./color_schemes";
-export const colors = getRandom();
+import { getRandomTheme } from "./color_themes";
+export const colors = getRandomTheme();
 
 export const profile = {
     name: "Zackary Santana",

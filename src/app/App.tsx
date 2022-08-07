@@ -70,7 +70,7 @@ const App: Component = () => {
         <footer>
           <div class={`px-[20px] sm:px-[60px] flex align-center items-center py-[30px] ${colors.text['link-content']}`}>
             <a href="https://github.com/ZackarySantana/Attach" target="_blank">
-              <p class="text-sm">Putting the power of connecting in to the hands of the user.</p>
+              <p class="text-sm">Putting the power of connecting in to the hands of the user. Theme <code>{colors.name}</code></p>
               <h3>Click here to make your own <span class="text-[#4ea8ed] font-mono">|attach|</span></h3>
             </a>
           </div>

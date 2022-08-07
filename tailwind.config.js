@@ -4,7 +4,7 @@ module.exports = {
         "./index.html",
         "./src/**/*.tsx",
         "./src/config.ts",
-        "./src/color_schemes.ts",
+        "./src/color_themes.ts",
     ],
     theme: {
         extend: {},
