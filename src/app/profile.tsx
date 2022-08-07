@@ -77,7 +77,7 @@ const Profile: Component = () => {
 
 export const Share = (props: { class: string; }) => {
     return (
-        <button class={`${props.class} ${colors.bg.profile} transition-all border-solid border-2 hover:shadow-[1px_1px_6px_3px_rgba(0,0,0,0.25)] focus:shadow-[inset_1px_1px_3px_2px_rgba(0,0,0,0.25)] p-2 rounded-full ${colors.banner.border} shadow-[1px_1px_3px_2px_rgba(0,0,0,0.25)] z-10`} onClick={() => {
+        <button aria-label="Share" class={`${props.class} ${colors.bg.profile} transition-all border-solid border-2 hover:shadow-[1px_1px_6px_3px_rgba(0,0,0,0.25)] focus:shadow-[inset_1px_1px_3px_2px_rgba(0,0,0,0.25)] p-2 rounded-full ${colors.banner.border} shadow-[1px_1px_3px_2px_rgba(0,0,0,0.25)] z-10`} onClick={() => {
             let url = document.location.href;
             navigator.share({
                 title: 'web.dev',
