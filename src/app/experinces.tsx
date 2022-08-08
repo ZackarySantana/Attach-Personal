@@ -45,10 +45,10 @@ const Experiences = (props: { title: string; experiences: Experience[]; solo?: b
                             `}>
                                     <div class="p-2">
                                         {experience.icon &&
-                                            <img src={experience.icon} />
+                                            <img src={experience.icon} alt={`${props.title}'s Icon`} />
                                         }
                                         {!experience.icon &&
-                                            <img src={attach_logo} />
+                                            <img src={attach_logo} alt={`${props.title}'s Icon`} />
                                         }
                                     </div>
                                 </div>
