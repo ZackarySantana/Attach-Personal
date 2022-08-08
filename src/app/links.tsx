@@ -38,10 +38,10 @@ const Links = (props: { title: string; linksList: Link[]; solo?: boolean; defaul
                             `}>
                                         <div class="p-2">
                                             {link.icon &&
-                                                <img src={link.icon} alt={`${props.title}'s Icon`} />
+                                                <img src={link.icon} class="w-full h-full" alt={`${props.title}'s Icon`} />
                                             }
                                             {!link.icon &&
-                                                <img src={attach_logo} alt={`${props.title}'s Icon`} />
+                                                <img src={attach_logo} class="w-full h-full" alt={`${props.title}'s Icon`} />
                                             }
                                         </div>
                                     </div>
