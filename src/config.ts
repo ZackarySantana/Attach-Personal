@@ -7,8 +7,8 @@ import { Images } from "./app/profile";
 
 import profileWebp from "./assets/profile.webp";
 import profilePng from "./assets/profile.png";
-// export { default as bannerWebp } from "./assets/banner.webp";
-// export { default as bannerPng } from "./assets/banner.png";
+import bannerWebp from "./assets/banner.webp";
+import bannerPng from "./assets/banner.png";
 
 /*
 Both are optional! If you would like neither, just comment out or remove both (but still export images)
@@ -22,8 +22,8 @@ Both are optional! If you would like neither, just comment out or remove both (b
 export const images = {
     profileWebp: profileWebp,
     profilePng: profilePng,
-    // bannerWebp: bannerWebp,
-    // bannerPng: bannerPng,
+    bannerWebp: bannerWebp,
+    bannerPng: bannerPng,
 } as Images;
 
 import { getRandomTheme } from "./color_themes";
