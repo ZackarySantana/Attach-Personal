@@ -18,7 +18,7 @@ const Button = (props: { url: string; download_name: string; children: string; }
                     <h1 class="font-bold whitespace-nowrap">{props.children}</h1>
                 </div>
             </a>
-            <a href={props.url} download={props.download_name} class="w-[20%]">
+            <a href={props.url} download={props.download_name} aria-label={`${props.download_name} Download`} class="w-[20%]">
                 <div class={`w-full h-[50px] flex items-center justify-center rounded-lg leading-5 px-4 ${colors.bg.button} transition-all
                     hover:shadow-[1px_1px_2px_4px_rgba(0,0,0,0.25)] active:shadow-[inset_1px_1px_0px_2px_rgba(0,0,0,0.5)] shadow-[1px_1px_0px_2px_rgba(0,0,0,0.1)]`}>
                     <Download />
