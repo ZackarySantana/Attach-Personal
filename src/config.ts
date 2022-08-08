@@ -64,6 +64,7 @@ export const skillsList = [
 import email from "./assets/icons/email.svg";
 import linkedin from "./assets/icons/linkedin.svg";
 import github from "./assets/icons/github.svg";
+import mongodb from "./assets/icons/mongodb.svg";
 import Resume from "./assets/Resume.pdf";
 
 /**
@@ -101,6 +102,7 @@ const experiences = [
             "Jun 2022 - Aug 2022",
             "New York, New York",
         ],
+        icon: mongodb,
         desc: [
             "Worked on a scrum (agile) team for MongoDB's internal CI/CD testing tool, Evergreen (https://github.com/evergreen-ci/evergreen).",
             "Used Golang to create new REST endpoints, manage existing ones, and create middleware.",
