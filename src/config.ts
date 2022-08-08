@@ -64,7 +64,10 @@ export const skillsList = [
 import email from "./assets/icons/email.svg";
 import linkedin from "./assets/icons/linkedin.svg";
 import github from "./assets/icons/github.svg";
+import portfolio from "./assets/icons/portfolio.svg";
+import todo from "./assets/icons/todo.svg";
 import mongodb from "./assets/icons/mongodb.svg";
+import metlife from "./assets/icons/metlife.png";
 import Resume from "./assets/Resume.pdf";
 
 /**
@@ -82,10 +85,12 @@ There are no required links, but each link must have:
 const projects_linksList = [
     {
         url: "https://zackaryjamessantana.com/",
+        icon: portfolio,
         title: "Portfolio",
     },
     {
         url: "https://todo.zackaryjamessantana.com/",
+        icon: todo,
         title: "Todo",
     },
     {
@@ -118,6 +123,7 @@ const experiences = [
             "Jun 2021 - Aug 2021",
             "Cary, North Carolina",
         ],
+        icon: metlife,
         desc: [
             "Managed and maintained a frontend Angular.js application that displayed real-time information that was vital for the team.",
             "Organized the backend Restify that interacted with a MongoDB that used endpoints to test status of Java Virtual Machines.",
