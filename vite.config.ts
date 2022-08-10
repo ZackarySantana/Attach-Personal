@@ -31,15 +31,35 @@ export default defineConfig({
 
                         const promises = files.map((name) =>
                             sharp(fs.readFileSync(folder + "/" + name))
-                                .toFormat("webp", { quality: 70 })
-                                .toFile(
-                                    folder +
-                                        "/" +
-                                        name.replace(/\.[^/.]+$/, ".webp")
-                                )
-                                .then(() =>
-                                    console.log(folder + "/" + name, "-> webp")
-                                )
+                                .resize({
+                                    fit: sharp.fit.contain,
+                                    width: 150,
+                                })
+                                .toFile(folder + "/" + name)
+                                .then(async () => {
+                                    await sharp(
+                                        fs.readFileSync(folder + "/" + name)
+                                    )
+                                        .toFormat("webp", { quality: 70 })
+                                        .toFile(
+                                            folder +
+                                                "/" +
+                                                name.replace(
+                                                    /\.[^/.]+$/,
+                                                    ".webp"
+                                                )
+                                        )
+                                        .then(() => {})
+                                        .catch((e) =>
+                                            console.log(
+                                                "Failed converting",
+                                                name,
+                                                e,
+                                                "skipping..."
+                                            )
+                                        );
+                                    console.log(folder + "/" + name, "-> webp");
+                                })
                                 .catch((e) =>
                                     console.log(
                                         "Failed converting",
