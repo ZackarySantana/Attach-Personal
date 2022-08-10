@@ -1,15 +1,16 @@
 import { Component, For } from 'solid-js';
 import Image from './Image';
 
-import { images, skillsList, colors, profile } from '../config';
+import { images, skillsList, colors, base_profile } from '../config';
 import { getRandomFunkyTheme } from '../color_themes';
 
-import ThemeSwitchIcon from "../assets/icons/theme-mode-icon.svg";
+export interface ExtendedProfile {
+    gender?: string;
+    username?: string;
+}
 
 export type Images = {
-    bannerWebp: string;
     bannerPng: string;
-    profileWebp: string;
     profilePng: string;
 };
 
@@ -35,20 +36,20 @@ const Profile: Component = () => {
             ${colors.gradient.from != "" && !colors.banner['from-transparent'] ? `${colors.gradient.from}` : ""}
             ${colors.gradient.to != "" && !colors.banner['to-transparent'] ? `${colors.gradient.to}` : ""}
             border-solid border-2 ${colors.banner.border}`}>
-                {(images?.bannerPng || images?.bannerWebp) && (
+                {images?.bannerPng && (
                     <Image
-                        src={images?.bannerWebp}
-                        srcAlt={images?.bannerPng}
+                        src={images.bannerPng.replace(/\.[^/.]+$/, ".webp")}
+                        srcAlt={images.bannerPng}
                         alt="Banner"
                         class="w-full h-full"
                     />
                 )}
             </div>
-            {(images?.profilePng || images?.profileWebp) && (
+            {images?.profilePng && (
                 <div class={`absolute top-[17.5px] left-[15px] overflow-hidden w-[120px] h-[120px] rounded-full border-solid border-2 ${colors.banner.border}`}>
                     <Image
-                        src={images.profilePng}
-                        srcAlt={images.profileWebp}
+                        src={images.profilePng.replace(/\.[^/.]+$/, ".webp")}
+                        srcAlt={images.profilePng}
                         alt="Profile picture"
                         class="w-full h-full"
                     />
@@ -57,11 +58,11 @@ const Profile: Component = () => {
             <div class="relative px-4 pt-1">
                 <Share class="absolute right-[15px] top-[10px] hidden sm:block" />
                 <ThemeSwitch class="absolute right-[15px] top-[50px] hidden sm:block" />
-                <h1 class="text-2xl font-bold">{profile.name}</h1>
-                <h2 class={`text-lg font-medium ${colors.text.subtitle}`}>{profile.subtitle}</h2>
+                <h1 class="text-2xl font-bold">{base_profile.name()}</h1>
+                <h2 class={`text-lg font-medium ${colors.text.subtitle}`}>{base_profile.subtitle}</h2>
                 <div class={`${colors.text.bio} text-sm leading-4 pl-3 relative`}>
                     <div class={`absolute top-[11%] left-[5px] w-[2px] h-[80%] rounded-sm ${colors.skills.line}`}></div>
-                    <For each={profile.bio}>
+                    <For each={base_profile.bio}>
                         {(bio) => (
                             <p>{bio}</p>
                         )}
@@ -81,7 +82,7 @@ export const Share = (props: { class: string; }) => {
             let url = document.location.href;
             navigator.share({
                 title: 'web.dev',
-                text: `Share ${profile.name}'s |attach|`,
+                text: `Share ${base_profile.name()}'s |attach|`,
                 url,
             });
         }}>

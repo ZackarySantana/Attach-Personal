@@ -5,21 +5,24 @@
 >
     <head>
         <!-- Other Meta Tags -->
-        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta charset="utf-8" />
         <meta
             name="viewport"
             content="width=device-width,initial-scale=1,maximum-scale=5"
         />
-        <meta
-            http-equiv="Content-Type"
-            content="Accept: application/json, text/javascript"
-        />
+
+        <!-- Open Graph Tags -->
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/profile.png" />
+        <meta property="og:image:type" content="png" />
+        <meta property="og:image:alt" content="Profile" />
 
         <!-- Manifest -->
         <link rel="manifest" href="/src/assets/favicon/manifest.json" />
 
         <!-- Images -->
+        <link rel="image_src" href="/profile.png" />
         <link
             rel="icon"
             type="image/ico"
@@ -47,6 +50,9 @@
             sizes="16x16"
             href="/src/assets/favicon/favicon-16x16.png"
         />
+
+        <!-- Addtional Tags -->
+        <!-- BUILD_REPLACE -->
     </head>
     <body class="max-w-[500px] h-screen mx-auto">
         <noscript>You need to enable JavaScript to run this app.</noscript>

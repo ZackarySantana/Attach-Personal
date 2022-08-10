@@ -10,7 +10,9 @@ export default function Image(
 ) {
     return (
         <picture>
-            <source srcset={props.src} type="image/webp" />
+            {process.env.NODE_ENV == "production" &&
+                <source srcset={props.src} type="image/webp" />
+            }
             <source srcset={props.srcAlt} type="image/jpeg" />
             <img
                 loading={props.loading ?? "lazy"}

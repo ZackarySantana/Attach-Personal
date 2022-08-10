@@ -1,5 +1,5 @@
 import { Component, For } from 'solid-js';
-import { colors, sections, webpage_config } from '../config';
+import { colors, sections } from '../config';
 import Button, { ButtonType, isButton } from './button';
 import Experiences, { Experience } from './experinces';
 import Links, { Link } from './links';
@@ -31,20 +31,57 @@ const App: Component = () => {
 
   document.documentElement.classList.add(colors.bg.main);
 
-  const title = document.createElement("title");
-  title.innerHTML = webpage_config.title;
+  // const title = document.createElement("title");
+  // title.innerHTML = webpage_config.title;
 
-  const desc = document.createElement("meta");
-  desc.setAttribute("name", "description");
-  desc.setAttribute("content", webpage_config.desc);
+  // const ogTitle = document.createElement("meta");
+  // ogTitle.setAttribute("property", "og:title");
+  // ogTitle.setAttribute("content", webpage_config.title);
 
-  const keywords = document.createElement("meta");
-  keywords.setAttribute("name", "keywords");
-  keywords.setAttribute("content", webpage_config.keywords);
+  // const desc = document.createElement("meta");
+  // desc.setAttribute("name", "description");
+  // desc.setAttribute("content", webpage_config.desc);
 
-  document.head.appendChild(title);
-  document.head.appendChild(desc);
-  document.head.appendChild(keywords);
+  // const ogDesc = document.createElement("meta");
+  // ogDesc.setAttribute("property", "og:description");
+  // ogDesc.setAttribute("content", webpage_config.desc);
+
+  // const keywords = document.createElement("meta");
+  // keywords.setAttribute("name", "keywords");
+  // keywords.setAttribute("content", webpage_config.keywords);
+
+  // const profileFirstname = document.createElement("meta");
+  // profileFirstname.setAttribute("property", "profile:first_name");
+  // profileFirstname.setAttribute("content", base_profile.first_name);
+
+  // const profileLastname = document.createElement("meta");
+  // profileLastname.setAttribute("property", "profile:last_name");
+  // profileLastname.setAttribute("content", base_profile.last_name);
+
+  // const commentSection = document.createComment(" Generated Fields ");
+  // document.head.appendChild(commentSection);
+
+  // document.head.appendChild(title);
+  // document.head.appendChild(desc);
+  // document.head.appendChild(keywords);
+  // document.head.appendChild(ogTitle);
+  // document.head.appendChild(ogDesc);
+  // document.head.appendChild(profileFirstname);
+  // document.head.appendChild(profileLastname);
+
+  // if (extended_profile.username) {
+  //   const profileUsername = document.createElement("meta");
+  //   profileUsername.setAttribute("property", "profile:username");
+  //   profileUsername.setAttribute("content", extended_profile.username);
+  //   document.head.appendChild(profileUsername);
+  // }
+
+  // if (extended_profile.gender) {
+  //   const profileGender = document.createElement("meta");
+  //   profileGender.setAttribute("property", "profile:gender");
+  //   profileGender.setAttribute("content", extended_profile.gender);
+  //   document.head.appendChild(profileGender);
+  // }
 
   return (
     <>

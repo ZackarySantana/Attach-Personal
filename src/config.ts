@@ -2,19 +2,11 @@
 import { Sections } from "./app/App";
 import { Link } from "./app/links";
 import { Experience } from "./app/experinces";
-import { Images } from "./app/profile";
+import { ExtendedProfile, Images } from "./app/profile";
 /* Type Imports - DO NOT TOUCH */
 
-import profileWebp from "/profile.webp";
-import profilePng from "/profile.png";
-import bannerWebp from "/banner.webp";
-import bannerPng from "/banner.png";
-
 /*
-Both are optional! If you would like neither, just comment out or remove both (but still export images)
-I recommend https://www.photopea.com/ for editing and exporting both files in .png and .webp
-
-If you don't have either or, you can insert the one you have. This is for expanded compatability with displaying and smaller sizes
+Profile and banner are optional! Just replace the file in the public folder if you want it, or delete them from the folder!
 
  - Profile:
    - Dimensions: 120 x 120
@@ -23,21 +15,28 @@ If you don't have either or, you can insert the one you have. This is for expand
    - This will be resized based on screen size and will focus on the middle of the image
 */
 export const images = {
-    profileWebp: profileWebp,
-    profilePng: profilePng,
-    bannerWebp: bannerWebp,
-    bannerPng: bannerPng,
+    profilePng: "/profile.png",
+    bannerPng: "/banner.png",
 } as Images;
 
 import { getRandomTheme } from "./color_themes";
 export const colors = getRandomTheme();
 export const random_theme_button = true;
 
-export const profile = {
-    name: "John Doe",
+export const base_profile = {
+    first_name: "John",
+    last_name: "Doe",
     subtitle: "Aspiring Software Developer",
     bio: ["Miami, FL", "Florida International University"],
+    name() {
+        return this.first_name + " " + this.last_name;
+    },
 };
+
+export const extended_profile = {
+    gender: "Male", // You can input any gender
+    username: "Cobra", // You can opt out my commenting either of these
+} as ExtendedProfile;
 
 export const skillsList = [
     "Time management",
@@ -66,12 +65,6 @@ export const skillsList = [
     "Analysis",
     "Self-motivation",
 ];
-
-import email from "/icons/email.svg";
-import linkedin from "/icons/linkedin.svg";
-import github from "/icons/github.svg";
-// @ts-ignore
-import Resume from "/Resume.docx";
 
 /**
 There are no required links, but each link must have:
@@ -146,18 +139,18 @@ const games_linksList = [
 const contactMe_linksList = [
     {
         url: "https://www.linkedin.com/in/",
-        icon: linkedin,
+        icon: "/icons/linkedin.svg",
         title: "LinkedIn",
     },
     {
         url: "https://github.com/",
-        icon: github,
+        icon: "/icons/github.svg",
         title: "GitHub",
     },
     {
         url: "mailto: someone@gmail.com",
         title: "Email",
-        icon: email,
+        icon: "/icons/email.svg",
         content: "someone@gmail.com",
     },
 ] as Link[];
@@ -168,8 +161,8 @@ const contactMe_linksList = [
 export const sections = {
     // An example of a button. This button is a resume download
     Resume: {
-        url: Resume,
-        download_name: `${profile.name}_Resume.pdf`,
+        url: "/Resume.docx",
+        download_name: `${base_profile.name()}_Resume.pdf`,
     },
     // An example of a list of projects, that is opened on load
     Projects: {
@@ -189,7 +182,7 @@ export const sections = {
 } as Sections;
 
 export const webpage_config = {
-    title: `${profile.name}'s |attach|`,
-    desc: `An |attach| for ${profile.name}`,
-    keywords: `New Grad, Portfolio, Projects, Developer, Coder, Programmer, Programming, Languages, Software, ${profile.name}`,
+    title: `${base_profile.name()}'s |attach|`,
+    desc: `An |attach| for ${base_profile.name()}`,
+    keywords: `New Grad, Portfolio, Projects, Developer, Coder, Programmer, Programming, Languages, Software, ${base_profile.name()}`,
 };
