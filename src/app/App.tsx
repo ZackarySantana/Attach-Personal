@@ -1,5 +1,5 @@
 import { Component, For } from 'solid-js';
-import { colors, sections, webpage_config } from '../config';
+import { colors, sections } from '../config';
 import Button, { ButtonType, isButton } from './button';
 import Experiences, { Experience } from './experinces';
 import Links, { Link } from './links';
@@ -30,21 +30,6 @@ export function isExperiences(obj: any): obj is Experiences {
 const App: Component = () => {
 
   document.documentElement.classList.add(colors.bg.main);
-
-  const title = document.createElement("title");
-  title.innerHTML = webpage_config.title;
-
-  const desc = document.createElement("meta");
-  desc.setAttribute("name", "description");
-  desc.setAttribute("content", webpage_config.desc);
-
-  const keywords = document.createElement("meta");
-  keywords.setAttribute("name", "keywords");
-  keywords.setAttribute("content", webpage_config.keywords);
-
-  document.head.appendChild(title);
-  document.head.appendChild(desc);
-  document.head.appendChild(keywords);
 
   return (
     <>

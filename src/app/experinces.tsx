@@ -1,4 +1,4 @@
-import { createSignal, For, onMount } from 'solid-js';
+import { createEffect, createSignal, For, onMount } from 'solid-js';
 import { colors } from '../config';
 
 import attach_logo from "../assets/attach/attach_logo_full_v2.png";
@@ -12,15 +12,21 @@ export interface Experience {
 
 const Experiences = (props: { title: string; experiences: Experience[]; solo?: boolean; default_opened: boolean; }) => {
 
-    let child: HTMLDivElement | undefined;
-    const [open, setOpen] = createSignal(props.solo ?? props.default_opened);
-    let height;
+    const opened_LS = localStorage.getItem(props.title);
 
-    onMount(() => {
-        if (!child) {
+    let ref: HTMLDivElement | undefined;
+    const [open, setOpen] = createSignal(typeof opened_LS === "string" ? JSON.parse(opened_LS) : (props.solo ?? props.default_opened));
+    const [height, setHeight] = createSignal("10000px");
+
+    createEffect(() => {
+        if (!ref) {
             return;
         }
-        height = child.clientHeight + "px";
+        setHeight(ref.clientHeight + "px");
+    });
+
+    createEffect(() => {
+        localStorage.setItem(props.title, open() + "");
     });
 
     return (
@@ -31,8 +37,8 @@ const Experiences = (props: { title: string; experiences: Experience[]; solo?: b
                     <Arrow class={`transition-all duration-[300ms] ${open() ? "rotate-[-90deg]" : "rotate-[90deg]"}`} />
                 </div>
             }
-            <div class={`overflow-hidden transition-all duration-[300ms] ${open() ? "mb-3" : ""}`} style={{ "max-height": `${open() ? height : 0}` }}>
-                <div ref={child} class="flex flex-col gap-3">
+            <div class={`overflow-hidden transition-all duration-[300ms] ${open() ? "mb-3" : ""}`} style={{ "max-height": `${open() ? height() : "0px"}` }}>
+                <div ref={ref} class="flex flex-col gap-3">
                     <For each={props.experiences}>
                         {(experience: Experience) => (
                             <div class="relative w-full h-fit flex items-center pr-8 py-5">

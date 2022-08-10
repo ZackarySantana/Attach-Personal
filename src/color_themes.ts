@@ -250,8 +250,6 @@ const funky = [...themes, firery];
 function fromParams(params: URLSearchParams) {
     const theme = params.get("theme");
     if (theme != null) {
-        console.log(decodeURIComponent(theme.toLowerCase()));
-
         switch (decodeURIComponent(theme.toLowerCase())) {
             case "pinkish":
                 return pinkish;
@@ -273,6 +271,9 @@ function fromParams(params: URLSearchParams) {
 }
 
 export function getRandomTheme(force = true) {
+    if (typeof document === "undefined") {
+        return themes[0];
+    }
     const params = new URLSearchParams(document.location.search);
     if (force) {
         const forced = fromParams(params);
@@ -287,6 +288,9 @@ export function getRandomTheme(force = true) {
 }
 
 export function getRandomFunkyTheme(force = true, excludeCurrent = false) {
+    if (typeof document === "undefined") {
+        return themes[0];
+    }
     if (force) {
         const params = new URLSearchParams(document.location.search);
         const forced = fromParams(params);

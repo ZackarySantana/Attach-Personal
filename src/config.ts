@@ -2,16 +2,11 @@
 import { Sections } from "./app/App";
 import { Link } from "./app/links";
 import { Experience } from "./app/experinces";
-import { Images } from "./app/profile";
+import { ExtendedProfile, Images } from "./app/profile";
 /* Type Imports - DO NOT TOUCH */
 
-import profileWebp from "/profile.webp";
-import profilePng from "/profile.png";
-import bannerWebp from "/banner.webp";
-import bannerPng from "/banner.png";
-
 /*
-Both are optional! If you would like neither, just comment out or remove both (but still export images)
+Profile and banner are optional! Just replace the file in the public folder if you want it, or delete them from the folder!
 
  - Profile:
    - Dimensions: 120 x 120
@@ -20,21 +15,28 @@ Both are optional! If you would like neither, just comment out or remove both (b
    - This will be resized based on screen size and will focus on the middle of the image
 */
 export const images = {
-    profileWebp: profileWebp,
-    profilePng: profilePng,
-    bannerWebp: bannerWebp,
-    bannerPng: bannerPng,
+    profilePng: "/profile.png",
+    bannerPng: "/banner.png",
 } as Images;
 
 import { getRandomTheme } from "./color_themes";
 export const colors = getRandomTheme();
 export const random_theme_button = true;
 
-export const profile = {
-    name: "Zackary Santana",
+export const base_profile = {
+    first_name: "Zackary",
+    last_name: "Santana",
     subtitle: "Software Engineer, Fullstack",
     bio: ["MongoDB", "Miami, FL", "Florida International University"],
+    name() {
+        return this.first_name + " " + this.last_name;
+    },
 };
+
+export const extended_profile = {
+    gender: "Male", // You can input any gender
+    username: "LidTop", // You can opt out my commenting either of these
+} as ExtendedProfile;
 
 export const skillsList = [
     "TypeScript",
@@ -61,15 +63,6 @@ export const skillsList = [
     "Grafana",
 ];
 
-import email from "/icons/email.svg";
-import linkedin from "/icons/linkedin.svg";
-import github from "/icons/github.svg";
-import portfolio from "/icons/portfolio.svg";
-import todo from "/icons/todo.svg";
-import mongodb from "/icons/mongodb.svg";
-import metlife from "/icons/metlife.png";
-import Resume from "/Resume.pdf";
-
 /**
 There are no required links, but each link must have:
  - url: string;
@@ -85,12 +78,12 @@ There are no required links, but each link must have:
 const projects_linksList = [
     {
         url: "https://zackaryjamessantana.com/",
-        icon: portfolio,
+        icon: "/icons/portfolio.svg",
         title: "Portfolio",
     },
     {
         url: "https://todo.zackaryjamessantana.com/",
-        icon: todo,
+        icon: "/icons/todo.svg",
         title: "Todo",
     },
     {
@@ -107,7 +100,7 @@ const experiences = [
             "Jun 2022 - Aug 2022",
             "New York, New York",
         ],
-        icon: mongodb,
+        icon: "/icons/mongodb.svg",
         desc: [
             "Worked on a scrum (agile) team for MongoDB's internal CI/CD testing tool, Evergreen (https://github.com/evergreen-ci/evergreen).",
             "Used Golang to create new REST endpoints, manage existing ones, and create middleware.",
@@ -123,7 +116,7 @@ const experiences = [
             "Jun 2021 - Aug 2021",
             "Cary, North Carolina",
         ],
-        icon: metlife,
+        icon: "/icons/metlife.png",
         desc: [
             "Managed and maintained a frontend Angular.js application that displayed real-time information that was vital for the team.",
             "Organized the backend Restify that interacted with a MongoDB that used endpoints to test status of Java Virtual Machines.",
@@ -146,18 +139,18 @@ const games_linksList = [
 const contactMe_linksList = [
     {
         url: "https://www.linkedin.com/in/zackary-santana/",
-        icon: linkedin,
+        icon: "/icons/linkedin.svg",
         title: "LinkedIn",
     },
     {
         url: "https://github.com/ZackarySantana/",
-        icon: github,
+        icon: "/icons/github.svg",
         title: "GitHub",
     },
     {
         url: "mailto: zsant014@fiu.edu",
         title: "Email",
-        icon: email,
+        icon: "/icons/email.svg",
         content: "zsant014@fiu.edu",
     },
 ] as Link[];
@@ -168,8 +161,8 @@ const contactMe_linksList = [
 export const sections = {
     // An example of a button. This button is a resume download
     Resume: {
-        url: Resume,
-        download_name: `${profile.name}_Resume.pdf`,
+        url: "/Resume.pdf",
+        download_name: `${base_profile.name()}_Resume.pdf`,
     },
     // An example of a list of projects, that is opened on load
     Projects: {
@@ -189,7 +182,7 @@ export const sections = {
 } as Sections;
 
 export const webpage_config = {
-    title: `${profile.name}'s |attach|`,
-    desc: `An |attach| for ${profile.name}`,
-    keywords: `New Grad, Portfolio, Projects, Web Development, Node.js, React.js, Remix.js, CSS, Developer, Coder, Programmer, Programming, Languages, Software, ${profile.name}`,
+    title: `${base_profile.name()}'s |attach|`,
+    desc: `An |attach| for ${base_profile.name()}`,
+    keywords: `New Grad, Portfolio, Projects, Developer, Coder, Programmer, Programming, Languages, Software, ${base_profile.name()}`,
 };
