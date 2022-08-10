@@ -71,7 +71,7 @@ import email from "/icons/email.svg";
 import linkedin from "/icons/linkedin.svg";
 import github from "/icons/github.svg";
 // @ts-ignore
-import Resume from "./assets/Resume.docx";
+import Resume from "/Resume.docx";
 
 /**
 There are no required links, but each link must have:
