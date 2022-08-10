@@ -37,7 +37,16 @@ const App: Component = () => {
   ogImage.setAttribute("content", document.location.href + images.profilePng.substring(1));
   document.head.appendChild(ogImage);
 
-  console.log(document.location.href);
+  const ms = document.createElement("meta");
+  ms.setAttribute("name", "msapplication-TileImage");
+  ms.setAttribute("content", document.location.href + images.profilePng.substring(1));
+  document.head.appendChild(ms);
+
+  const url = document.createElement("meta");
+  url.setAttribute("property", "og:url");
+  url.setAttribute("content", document.location.href);
+  document.head.appendChild(url);
+
   return (
     <>
       <nav class="relative">

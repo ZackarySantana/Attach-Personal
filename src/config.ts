@@ -183,6 +183,6 @@ export const sections = {
 
 export const webpage_config = {
     title: `${base_profile.name()}'s |attach|`,
-    desc: `An |attach| for ${base_profile.name()}`,
+    desc: `${base_profile.name()}'s projects, work experience, games, contact info, and more! Click to get in contact!`,
     keywords: `New Grad, Portfolio, Projects, Developer, Coder, Programmer, Programming, Languages, Software, ${base_profile.name()}`,
 };

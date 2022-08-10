@@ -66,7 +66,7 @@ export default defineConfig({
                         <meta property="og:site_name" content="${c.title}">
                         <meta property="og:description" content="${c.desc}">
                         <meta property="og:updated_time" content="${Date.now()}" />
-                        <meta property="og:image:type" content="png" />
+                        <meta property="og:image:type" content="image/png" />
                         <meta property="og:image:alt" content="Profile" />
                         <meta property="profile:first_name" content="${
                             bp.first_name
