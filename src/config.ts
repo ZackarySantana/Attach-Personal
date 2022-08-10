@@ -10,9 +10,10 @@ Profile and banner are optional! Just replace the file in the public folder if y
 
  - Profile:
    - Aspect Ratio: 1/1
-   - Dimensions: 120 x 120 (it is resized automatically! So if it isn't the right size, don't worry)
+   - Dimensions: 120 x 120 (it is resized automatically!)
  - Banner:
-   - Dimensions: 320 x 130
+   - Aspect Ratio: 7/2
+   - Dimensions: 455 x 130 (it is resized automatically!)
 */
 export const images = {
     profilePng: "/profile.png",

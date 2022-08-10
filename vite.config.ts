@@ -33,7 +33,14 @@ export default defineConfig({
                             sharp(fs.readFileSync(folder + "/" + name))
                                 .resize({
                                     fit: sharp.fit.contain,
-                                    width: 150,
+                                    width: name.includes("profile")
+                                        ? 150
+                                        : name.includes("banner")
+                                        ? 455
+                                        : undefined,
+                                    height: name.includes("banner")
+                                        ? 130
+                                        : undefined,
                                 })
                                 .toFile(folder + "/" + name)
                                 .then(async () => {
