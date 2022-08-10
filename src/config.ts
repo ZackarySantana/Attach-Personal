@@ -1,14 +1,14 @@
 /* Type Imports - DO NOT TOUCH */
-import { Sections } from "./app/App";
-import { Link } from "./app/links";
-import { Experience } from "./app/experinces";
-import { Images } from "./app/profile";
+import { Sections } from "../src/app/App";
+import { Link } from "../src/app/links";
+import { Experience } from "../src/app/experinces";
+import { Images } from "../src/app/profile";
 /* Type Imports - DO NOT TOUCH */
 
-import profileWebp from "./assets/profile.webp";
-import profilePng from "./assets/profile.png";
-import bannerWebp from "./assets/banner.webp";
-import bannerPng from "./assets/banner.png";
+import profileWebp from "./profile.webp";
+import profilePng from "./profile.png";
+import bannerWebp from "./banner.webp";
+import bannerPng from "./banner.png";
 
 /*
 Both are optional! If you would like neither, just comment out or remove both (but still export images)
@@ -29,7 +29,7 @@ export const images = {
     bannerPng: bannerPng,
 } as Images;
 
-import { getRandomTheme } from "./color_themes";
+import { getRandomTheme } from "../src/color_themes";
 export const colors = getRandomTheme();
 export const random_theme_button = true;
 
@@ -67,9 +67,13 @@ export const skillsList = [
     "Self-motivation",
 ];
 
-import email from "./assets/icons/email.svg";
-import linkedin from "./assets/icons/linkedin.svg";
-import github from "./assets/icons/github.svg";
+import email from "./icons/email.svg";
+import linkedin from "./icons/linkedin.svg";
+import github from "./icons/github.svg";
+import portfolio from "./icons/portfolio.svg";
+import todo from "./icons/todo.svg";
+import mongodb from "./icons/mongodb.svg";
+import metlife from "./icons/metlife.png";
 // @ts-ignore
 import Resume from "./assets/Resume.docx";
 
