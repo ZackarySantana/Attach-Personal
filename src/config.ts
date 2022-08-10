@@ -5,10 +5,10 @@ import { Experience } from "../src/app/experinces";
 import { Images } from "../src/app/profile";
 /* Type Imports - DO NOT TOUCH */
 
-import profileWebp from "./profile.webp";
-import profilePng from "./profile.png";
-import bannerWebp from "./banner.webp";
-import bannerPng from "./banner.png";
+import profileWebp from "/profile.webp";
+import profilePng from "/profile.png";
+import bannerWebp from "/banner.webp";
+import bannerPng from "/banner.png";
 
 /*
 Both are optional! If you would like neither, just comment out or remove both (but still export images)
@@ -67,13 +67,9 @@ export const skillsList = [
     "Self-motivation",
 ];
 
-import email from "./icons/email.svg";
-import linkedin from "./icons/linkedin.svg";
-import github from "./icons/github.svg";
-import portfolio from "./icons/portfolio.svg";
-import todo from "./icons/todo.svg";
-import mongodb from "./icons/mongodb.svg";
-import metlife from "./icons/metlife.png";
+import email from "/icons/email.svg";
+import linkedin from "/icons/linkedin.svg";
+import github from "/icons/github.svg";
 // @ts-ignore
 import Resume from "./assets/Resume.docx";
 
