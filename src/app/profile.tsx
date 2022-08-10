@@ -40,7 +40,7 @@ const Profile: Component = () => {
                         src={images?.bannerWebp}
                         srcAlt={images?.bannerPng}
                         alt="Banner"
-                        class="w-full h-full"
+                        class="block w-full h-full object-cover object-center"
                     />
                 )}
             </div>
@@ -50,7 +50,7 @@ const Profile: Component = () => {
                         src={images.profilePng}
                         srcAlt={images.profileWebp}
                         alt="Profile picture"
-                        class="w-full h-full"
+                        class="block w-full h-full object-cover object-center"
                     />
                 </div>
             )}

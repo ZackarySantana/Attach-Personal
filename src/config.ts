@@ -12,9 +12,6 @@ import bannerPng from "/banner.png";
 
 /*
 Both are optional! If you would like neither, just comment out or remove both (but still export images)
-I recommend https://www.photopea.com/ for editing and exporting both files in .png and .webp
-
-If you don't have either or, you can insert the one you have. This is for expanded compatability with displaying and smaller sizes
 
  - Profile:
    - Dimensions: 120 x 120
@@ -34,44 +31,44 @@ export const colors = getRandomTheme();
 export const random_theme_button = true;
 
 export const profile = {
-    name: "John Doe",
-    subtitle: "Aspiring Software Developer",
-    bio: ["Miami, FL", "Florida International University"],
+    name: "Zackary Santana",
+    subtitle: "Software Engineer, Fullstack",
+    bio: ["MongoDB", "Miami, FL", "Florida International University"],
 };
 
 export const skillsList = [
-    "Time management",
-    "Communication",
-    "Adaptability",
-    "Problem-solving",
-    "Teamwork",
-    "Creativity",
-    "Leadership",
-    "Interpersonal skills",
-    "Work ethic",
-    "Attention to detail",
-    "Stress management",
-    "Organization",
-    "Prioritizing",
-    "Planning",
-    "Goal setting",
-    "Verbal communication",
-    "Written communication",
-    "Presentation",
-    "Constructive feedback",
-    "Active listening",
-    "Self-management",
-    "Optimism",
-    "Calmness",
-    "Analysis",
-    "Self-motivation",
+    "TypeScript",
+    "React.js",
+    "Express.js",
+    "Remix.js",
+    "Solid.js",
+    "Node.js",
+    "Preact.js",
+    "Tailwind",
+    "Fresh",
+    "Deno",
+    "Twind",
+    "Java",
+    "Svelte",
+    "Firebase",
+    "Splunk",
+    "MongoDB",
+    "MySQL",
+    "Docker",
+    "Golang",
+    "Fly",
+    "Prometheus",
+    "Grafana",
 ];
 
 import email from "/icons/email.svg";
 import linkedin from "/icons/linkedin.svg";
 import github from "/icons/github.svg";
-// @ts-ignore
-import Resume from "/Resume.docx";
+import portfolio from "/icons/portfolio.svg";
+import todo from "/icons/todo.svg";
+import mongodb from "/icons/mongodb.svg";
+import metlife from "/icons/metlife.png";
+import Resume from "/Resume.pdf";
 
 /**
 There are no required links, but each link must have:
@@ -87,78 +84,81 @@ There are no required links, but each link must have:
  */
 const projects_linksList = [
     {
-        url: "https://google.com",
+        url: "https://zackaryjamessantana.com/",
+        icon: portfolio,
         title: "Portfolio",
-        content: "By default, content is the url (view next to continue)",
     },
     {
-        url: "https://google.com",
-        title: "Todo App",
-        content: "but you can force content by specifying like this!",
+        url: "https://todo.zackaryjamessantana.com/",
+        icon: todo,
+        title: "Todo",
     },
     {
-        url: "https://google.com",
-        title: "And more!",
+        url: "https://twitterst.fly.dev/",
+        title: "Twitter Filter",
     },
 ] as Link[];
 
 const experiences = [
     {
-        company: "Company X",
+        company: "MongoDB",
         meta: [
             "Software Engineer Intern",
             "Jun 2022 - Aug 2022",
-            "Space, Space",
+            "New York, New York",
         ],
+        icon: mongodb,
         desc: [
-            "Did many things to improve the company",
-            "Hired a private inspector",
-            "Became superman!",
+            "Worked on a scrum (agile) team for MongoDB's internal CI/CD testing tool, Evergreen (https://github.com/evergreen-ci/evergreen).",
+            "Used Golang to create new REST endpoints, manage existing ones, and create middleware.",
+            "Augmented the CLI to allow users to do actions that were previously restricted like using regex to find what tests to do on which builds and run that test-suite.",
+            "Modified core infrastructure of archiving tests and scheduling/restarting logic of tests.",
+            "Created new functionality that restarts a subset of tests for the user and systematically keeps track of non-restarted and restarted tests for the same test-suite.",
         ],
     },
     {
-        company: "Company Y",
+        company: "MetLife",
         meta: [
             "Software Engineer Intern",
             "Jun 2021 - Aug 2021",
-            "Space, Space",
+            "Cary, North Carolina",
         ],
+        icon: metlife,
         desc: [
-            "Did many things to improve the company",
-            "Hired a private inspector",
-            "Became superman!",
+            "Managed and maintained a frontend Angular.js application that displayed real-time information that was vital for the team.",
+            "Organized the backend Restify that interacted with a MongoDB that used endpoints to test status of Java Virtual Machines.",
+            "Worked in a SAFe Agile team that used scrum to keep track with the day-to-day process.",
         ],
     },
 ] as Experience[];
 
 const games_linksList = [
     {
-        url: "https://google.com",
-        title: "Game 1",
+        url: "https://zackaryjamessantana.com/hosted_projects/rpg.html",
+        title: "RPG",
     },
     {
-        url: "https://google.com",
-        title: "Game 2",
-        content: "But I have more!",
+        url: "https://videos.zackaryjamessantana.com/spacefrontier/",
+        title: "Space Frontier",
     },
 ] as Link[];
 
 const contactMe_linksList = [
     {
-        url: "https://www.linkedin.com/in/",
+        url: "https://www.linkedin.com/in/zackary-santana/",
         icon: linkedin,
         title: "LinkedIn",
     },
     {
-        url: "https://github.com/",
+        url: "https://github.com/ZackarySantana/",
         icon: github,
         title: "GitHub",
     },
     {
-        url: "mailto: someone@gmail.com",
+        url: "mailto: zsant014@fiu.edu",
         title: "Email",
         icon: email,
-        content: "someone@gmail.com",
+        content: "zsant014@fiu.edu",
     },
 ] as Link[];
 
@@ -191,5 +191,5 @@ export const sections = {
 export const webpage_config = {
     title: `${profile.name}'s |attach|`,
     desc: `An |attach| for ${profile.name}`,
-    keywords: `New Grad, Portfolio, Projects, Developer, Coder, Programmer, Programming, Languages, Software, ${profile.name}`,
+    keywords: `New Grad, Portfolio, Projects, Web Development, Node.js, React.js, Remix.js, CSS, Developer, Coder, Programmer, Programming, Languages, Software, ${profile.name}`,
 };
