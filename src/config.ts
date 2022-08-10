@@ -1,8 +1,8 @@
 /* Type Imports - DO NOT TOUCH */
-import { Sections } from "../src/app/App";
-import { Link } from "../src/app/links";
-import { Experience } from "../src/app/experinces";
-import { Images } from "../src/app/profile";
+import { Sections } from "./app/App";
+import { Link } from "./app/links";
+import { Experience } from "./app/experinces";
+import { Images } from "./app/profile";
 /* Type Imports - DO NOT TOUCH */
 
 import profileWebp from "/profile.webp";
@@ -29,7 +29,7 @@ export const images = {
     bannerPng: bannerPng,
 } as Images;
 
-import { getRandomTheme } from "../src/color_themes";
+import { getRandomTheme } from "./color_themes";
 export const colors = getRandomTheme();
 export const random_theme_button = true;
 
