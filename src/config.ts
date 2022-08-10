@@ -9,10 +9,10 @@ import { ExtendedProfile, Images } from "./app/profile";
 Profile and banner are optional! Just replace the file in the public folder if you want it, or delete them from the folder!
 
  - Profile:
-   - Dimensions: 120 x 120
+   - Aspect Ratio: 1/1
+   - Dimensions: 120 x 120 (it is resized automatically! So if it isn't the right size, don't worry)
  - Banner:
    - Dimensions: 320 x 130
-   - This will be resized based on screen size and will focus on the middle of the image
 */
 export const images = {
     profilePng: "/profile.png",

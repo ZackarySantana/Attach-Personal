@@ -52,6 +52,11 @@ const App: Component = () => {
   thumbnail.setAttribute("href", document.location.href + images.profilePng.substring(1));
   document.head.appendChild(thumbnail);
 
+  const iamgeSrc = document.createElement("link");
+  iamgeSrc.setAttribute("rel", "image_src");
+  iamgeSrc.setAttribute("href", document.location.href + images.profilePng.substring(1));
+  document.head.appendChild(iamgeSrc);
+
   return (
     <>
       <nav class="relative">
