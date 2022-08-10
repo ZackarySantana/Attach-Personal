@@ -47,6 +47,11 @@ const App: Component = () => {
   url.setAttribute("content", document.location.href);
   document.head.appendChild(url);
 
+  const thumbnail = document.createElement("link");
+  thumbnail.setAttribute("itemprop", "thumbnailUrl");
+  thumbnail.setAttribute("href", document.location.href + images.profilePng.substring(1));
+  document.head.appendChild(thumbnail);
+
   return (
     <>
       <nav class="relative">
