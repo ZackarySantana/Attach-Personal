@@ -2,7 +2,11 @@ import { defineConfig } from "vite";
 import solidPlugin from "vite-plugin-solid";
 import fs from "fs";
 import sharp from "sharp";
-import { base_profile, extended_profile, webpage_config } from "./src/config";
+import {
+    base_profile as bp,
+    extended_profile as ep,
+    webpage_config as c,
+} from "./src/config";
 
 export default defineConfig({
     plugins: [solidPlugin()],
@@ -55,24 +59,32 @@ export default defineConfig({
                     name: "MetaTag",
                     async writeBundle() {
                         let html = `
-                            <title>${webpage_config.title}</title>
-                            <meta name="description" content="${webpage_config.desc}">
-                            <meta name="keywords" content="${webpage_config.keywords}">
-                            <meta property="og:title" content="${webpage_config.title}">
-                            <meta property="og:description" content="${webpage_config.desc}">
-                            <meta property="profile:first_name" content="${base_profile.first_name}">
-                            <meta property="profile:last_name" content="${base_profile.last_name}">
+                        <title>${c.title}</title>
+                        <meta name="description" content="${c.desc}">
+                        <meta name="keywords" content="${c.keywords}">
+                        <meta property="og:title" content="${c.title}">
+                        <meta property="og:site_name" content="${c.title}">
+                        <meta property="og:description" content="${c.desc}">
+                        <meta property="og:updated_time" content="${Date.now()}" />
+                        <meta property="og:image:type" content="png" />
+                        <meta property="og:image:alt" content="Profile" />
+                        <meta property="profile:first_name" content="${
+                            bp.first_name
+                        }">
+                        <meta property="profile:last_name" content="${
+                            bp.last_name
+                        }">
                         `;
 
-                        if (extended_profile.username) {
+                        if (ep.username) {
                             html += `
-                                <meta property="profile:username" content="${extended_profile.username}">
+                                <meta property="profile:username" content="${ep.username}">
                             `;
                         }
 
-                        if (extended_profile.gender) {
+                        if (ep.gender) {
                             html += `
-                                <meta property="profile:gender" content="${extended_profile.gender}">
+                                <meta property="profile:gender" content="${ep.gender}">
                             `;
                         }
 

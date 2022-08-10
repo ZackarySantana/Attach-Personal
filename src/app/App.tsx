@@ -1,5 +1,5 @@
 import { Component, For } from 'solid-js';
-import { colors, sections } from '../config';
+import { colors, images, sections } from '../config';
 import Button, { ButtonType, isButton } from './button';
 import Experiences, { Experience } from './experinces';
 import Links, { Link } from './links';
@@ -31,6 +31,13 @@ const App: Component = () => {
 
   document.documentElement.classList.add(colors.bg.main);
 
+  const ogImage = document.createElement("meta");
+  ogImage.setAttribute("property", "og:image");
+  ogImage.setAttribute("itemprop", "image");
+  ogImage.setAttribute("content", document.location.href + images.profilePng.substring(1));
+  document.head.appendChild(ogImage);
+
+  console.log(document.location.href);
   return (
     <>
       <nav class="relative">
