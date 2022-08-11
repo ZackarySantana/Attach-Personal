@@ -3,19 +3,25 @@ import { colors, images, sections } from '../config';
 import Button, { ButtonType, isButton } from './button';
 import Experiences, { Experience } from './experinces';
 import Links, { Link } from './links';
+import Posts, { Post } from './posts';
 import Profile, { Share, ThemeSwitch } from './profile';
 
 export type Sections = {
-  [key: string]: Links | Experiences | ButtonType;
+  [key: string]: Links | Experiences | Posts | ButtonType;
 };
+
+export interface Links {
+  links: Link[];
+  default_opened?: boolean;
+}
 
 export interface Experiences {
   experiences: Experience[];
   default_opened?: boolean;
 }
 
-export interface Links {
-  links: Link[];
+export interface Posts {
+  posts: Post[];
   default_opened?: boolean;
 }
 
@@ -25,6 +31,10 @@ export function isLinks(obj: any): obj is Links {
 
 export function isExperiences(obj: any): obj is Experiences {
   return obj.experiences !== undefined;
+}
+
+export function isPost(obj: any): obj is Post {
+  return obj.posts !== undefined;
 }
 
 const App: Component = () => {
@@ -80,11 +90,15 @@ const App: Component = () => {
                 );
               } else if (isLinks(section)) {
                 return (
-                  <Links title={sectionName} linksList={section.links} default_opened={section.default_opened || false} />
+                  <Links title={sectionName} links={section.links} default_opened={section.default_opened || false} />
                 );
               } else if (isExperiences(section)) {
                 return (
                   <Experiences title={sectionName} experiences={section.experiences} default_opened={section.default_opened || false} />
+                );
+              } else if (isPost(section)) {
+                return (
+                  <Posts title={sectionName} posts={section.posts} default_opened={section.default_opened || false} />
                 );
               }
               return <></>;
@@ -101,11 +115,15 @@ const App: Component = () => {
                 );
               } else if (isLinks(section)) {
                 return (
-                  <Links title={sectionName} linksList={section.links} solo={true} default_opened={true} />
+                  <Links title={sectionName} links={section.links} solo={true} default_opened={true} />
                 );
               } else if (isExperiences(section)) {
                 return (
                   <Experiences title={sectionName} experiences={section.experiences} solo={true} default_opened={true} />
+                );
+              } else if (isPost(section)) {
+                return (
+                  <Posts title={sectionName} posts={section.posts} solo={true} default_opened={true} />
                 );
               }
               return <></>;
