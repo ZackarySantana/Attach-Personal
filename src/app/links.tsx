@@ -2,6 +2,7 @@ import { createEffect, createSignal, For } from 'solid-js';
 import { colors } from '../config';
 
 import attach_logo from "../assets/attach/attach_logo_full_v2.png";
+import Section from './section';
 
 export type Link = {
     url: string;
@@ -11,66 +12,38 @@ export type Link = {
 };
 
 const Links = (props: { title: string; linksList: Link[]; solo?: boolean; default_opened: boolean; }) => {
-
-    const opened_LS = localStorage.getItem(props.title);
-
-    let ref: HTMLDivElement | undefined;
-    const [open, setOpen] = createSignal(typeof opened_LS === "string" ? JSON.parse(opened_LS) : (props.solo ?? props.default_opened));
-    const [height, setHeight] = createSignal("10000px");
-
-    createEffect(() => {
-        if (!ref) {
-            return;
-        }
-        setHeight(ref.clientHeight + "px");
-    });
-
-    createEffect(() => {
-        localStorage.setItem(props.title, open() + "");
-    });
-
     return (
-        <div class="flex flex-col gap-3">
-            {!props.solo &&
-                <div class={`relative w-full h-[60px] flex items-center rounded-lg leading-5 px-4 ${colors.bg.links} select-none cursor-pointer`} onClick={() => setOpen(!open())}>
-                    <h1 class="font-bold whitespace-nowrap">{props.title}</h1>
-                    <Arrow class={`transition-all duration-[300ms] ${open() ? "rotate-[-90deg]" : "rotate-[90deg]"}`} />
-                </div>
-            }
-            <div class={`overflow-hidden transition-all duration-[300ms] ${open() ? "mb-3" : ""}`} style={{ "max-height": `${open() ? height() : 0}` }}>
-                <div ref={ref} class="flex flex-col gap-3">
-                    <For each={props.linksList}>
-                        {(link: Link) => (
-                            <a href={link.url} target="_blank" class="w-full">
-                                <div class="relative w-full h-[60px] flex items-center pr-4">
-                                    <div class={`absolute inset-[0] left-[25px] z-[-1] rounded-lg ${colors.bg.links}`}></div>
-                                    <div class={`w-[50px] min-w-[50px] h-[50px] flex items-center justify-center bg-gradient-to-b rounded-lg
+        <Section title={props.title} solo={props.solo} default_opened={props.default_opened} >
+            <For each={props.linksList}>
+                {(link: Link) => (
+                    <a href={link.url} target="_blank" class="w-full">
+                        <div class="relative w-full h-[60px] flex items-center pr-4">
+                            <div class={`absolute inset-[0] left-[25px] z-[-1] rounded-lg ${colors.bg.links}`}></div>
+                            <div class={`w-[50px] min-w-[50px] h-[50px] flex items-center justify-center bg-gradient-to-b rounded-lg
                             ${colors.links_icon['from-transparent'] ? "from-transparent" : ""}
                             ${colors.links_icon['to-transparent'] ? "to-transparent" : ""}
                             ${colors.gradient.from != "" && !colors.links_icon['from-transparent'] ? `${colors.gradient.from}` : ""}
                             ${colors.gradient.to != "" && !colors.links_icon['to-transparent'] ? `${colors.gradient.to}` : ""}
                             `}>
-                                        <div class="p-2">
-                                            {link.icon &&
-                                                <img src={link.icon} class="w-full h-full" alt={`${props.title}'s Icon`} />
-                                            }
-                                            {!link.icon &&
-                                                <img src={attach_logo} class="w-full h-full" alt={`${props.title}'s Icon`} />
-                                            }
-                                        </div>
-                                    </div>
-                                    <div class={`w-full overflow-hidden leading-5 pl-4 ${colors.bg.mask_links}`}>
-                                        <h3 class="font-bold whitespace-nowrap">{link.title}</h3>
-                                        <p class={`${colors.text['link-content']} font-medium text-sm whitespace-nowrap`}>{link.content || link.url}</p>
-                                    </div>
-                                    <Arrow />
+                                <div class="p-2">
+                                    {link.icon &&
+                                        <img src={link.icon} class="w-full h-full" alt={`${props.title}'s Icon`} />
+                                    }
+                                    {!link.icon &&
+                                        <img src={attach_logo} class="w-full h-full" alt={`${props.title}'s Icon`} />
+                                    }
                                 </div>
-                            </a>
-                        )}
-                    </For>
-                </div>
-            </div>
-        </div>
+                            </div>
+                            <div class={`w-full overflow-hidden leading-5 pl-4 ${colors.bg.mask_links}`}>
+                                <h3 class="font-bold whitespace-nowrap">{link.title}</h3>
+                                <p class={`${colors.text['link-content']} font-medium text-sm whitespace-nowrap`}>{link.content || link.url}</p>
+                            </div>
+                            <Arrow />
+                        </div>
+                    </a>
+                )}
+            </For>
+        </Section>
     );
 };
 
