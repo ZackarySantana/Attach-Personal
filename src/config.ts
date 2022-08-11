@@ -22,7 +22,6 @@ export const images = {
 } as Images;
 
 import { getRandomTheme } from "./color_themes";
-import { posts } from "./blog";
 export const colors = getRandomTheme();
 export const random_theme_button = true;
 
@@ -175,9 +174,6 @@ export const sections = {
     // An example of an experience section
     "💼 Work Experience": {
         experiences: experiences,
-    },
-    "⭐ Posts ⭐": {
-        posts: posts,
     },
     "🧠 Games": {
         links: games_list,

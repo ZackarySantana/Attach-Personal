@@ -24,7 +24,7 @@ const Links = (props: { title: string; links: Link[]; solo?: boolean; default_op
                                 <h3 class="font-bold whitespace-nowrap">{link.title}</h3>
                                 <p class={`${colors.text['link-content']} font-medium text-sm whitespace-nowrap`}>{link.content || link.url}</p>
                             </div>
-                            <Arrow />
+                            <Arrow class="w-[15px] h-[11px]" />
                         </div>
                     </a>
                 )}
