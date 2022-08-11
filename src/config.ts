@@ -2,6 +2,7 @@
 import { Sections } from "./app/App";
 import { Link } from "./app/links";
 import { Experience } from "./app/experinces";
+import { Post } from "./app/posts";
 import { ExtendedProfile, Images } from "./app/profile";
 /* Type Imports - DO NOT TOUCH */
 
@@ -21,6 +22,7 @@ export const images = {
 } as Images;
 
 import { getRandomTheme } from "./color_themes";
+import { posts } from "./blog";
 export const colors = getRandomTheme();
 export const random_theme_button = true;
 
@@ -76,7 +78,7 @@ There are no required links, but each link must have:
  If no icon is supplied, it will use a chain icon by default
  If no content is supplied, it will use the url by default
  */
-const projects_linksList = [
+const projects_list = [
     {
         url: "https://zackaryjamessantana.com/",
         icon: "/icons/portfolio.svg",
@@ -126,7 +128,7 @@ const experiences = [
     },
 ] as Experience[];
 
-const games_linksList = [
+const games_list = [
     {
         url: "https://zackaryjamessantana.com/hosted_projects/rpg.html",
         title: "RPG",
@@ -137,7 +139,7 @@ const games_linksList = [
     },
 ] as Link[];
 
-const contactMe_linksList = [
+const contactme_list = [
     {
         url: "https://www.linkedin.com/in/zackary-santana/",
         icon: "/icons/linkedin.svg",
@@ -161,24 +163,27 @@ const contactMe_linksList = [
  */
 export const sections = {
     // An example of a button. This button is a resume download
-    Resume: {
+    "📝 Resume": {
         url: "/Resume.pdf",
         download_name: `${base_profile.name()}_Resume.pdf`,
     },
     // An example of a list of projects, that is opened on load
-    Projects: {
-        links: projects_linksList,
+    "🕸️ Projects": {
+        links: projects_list,
         default_opened: true,
     },
     // An example of an experience section
-    "Work Experience": {
+    "💼 Work Experience": {
         experiences: experiences,
     },
-    Games: {
-        links: games_linksList,
+    "⭐ Posts ⭐": {
+        posts: posts,
     },
-    "Contact Me": {
-        links: contactMe_linksList,
+    "🧠 Games": {
+        links: games_list,
+    },
+    "📧 Contact Me": {
+        links: contactme_list,
     },
 } as Sections;
 

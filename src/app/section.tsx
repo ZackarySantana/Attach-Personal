@@ -23,10 +23,10 @@ const Section = (props: { title: string; solo?: boolean; default_opened: boolean
     return (
         <div class="flex flex-col gap-3">
             {!props.solo &&
-                <div class={`relative w-full h-[60px] flex items-center rounded-lg leading-5 px-4 ${colors.bg.links} select-none cursor-pointer`} onClick={() => setOpen(!open())}>
+                <button class={`relative w-full h-[60px] flex items-center rounded-lg leading-5 px-4 ${colors.bg.links} select-none cursor-pointer`} onClick={() => setOpen(!open())}>
                     <h1 class="font-bold whitespace-nowrap">{props.title}</h1>
                     <Arrow class={`transition-all duration-[300ms] ${open() ? "rotate-[-90deg]" : "rotate-[90deg]"}`} />
-                </div>
+                </button>
             }
             <div class={`overflow-hidden transition-all duration-[300ms] ${open() ? "mb-3" : ""}`} style={{ "max-height": `${open() ? height() : "0px"}` }}>
                 <div ref={ref} class="flex flex-col gap-3">
