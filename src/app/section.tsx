@@ -37,6 +37,21 @@ const Section = (props: { title: string; solo?: boolean; default_opened: boolean
     );
 };
 
+export const Icon = (props: { icon: string; title: string; class?: string; }) => {
+    return (
+        <div class={`w-[50px] min-w-[50px] h-[50px] flex items-center justify-center bg-gradient-to-b rounded-lg ${props.class}
+        ${colors.links_icon['from-transparent'] ? "from-transparent" : ""}
+        ${colors.links_icon['to-transparent'] ? "to-transparent" : ""}
+        ${colors.gradient.from != "" && !colors.links_icon['from-transparent'] ? `${colors.gradient.from}` : ""}
+        ${colors.gradient.to != "" && !colors.links_icon['to-transparent'] ? `${colors.gradient.to}` : ""}
+        `}>
+            <div class="p-2">
+                <img src={props.icon} class="w-full h-full" alt={`${props.title}'s Icon`} />
+            </div>
+        </div>
+    );
+};
+
 export default Section;
 
 const Arrow = (props: { class?: string; }) => {
