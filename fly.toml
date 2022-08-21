@@ -3,6 +3,10 @@ kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
 
+[mounts]
+  source="stats_data"
+  destination="/app/data"
+
 [env]
 
 [experimental]

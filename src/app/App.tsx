@@ -2,11 +2,13 @@ import { Component, createSignal, For, JSX } from 'solid-js';
 import { colors, images, sections } from '../config';
 import Button, { ButtonType, isButton } from './button';
 import Experiences, { Experience } from './experinces';
+import LinkElement from './Link';
 import Links, { Link } from './links';
+import PageStats from './pagestats';
 import Profile, { Share, ThemeSwitch } from './profile';
 
 export type Sections = {
-    [key: string]: Links | Experiences | ButtonType;
+    [key: string]: Links | Experiences | ButtonType | boolean;
 };
 
 export interface Links {
@@ -64,7 +66,7 @@ const App: Component = () => {
         <>
             <nav class="relative">
                 <div class="w-full text-center">
-                    <a href="/" class="text-sm text-[#4ea8ed] font-mono">|attach|</a>
+                    <LinkElement href="/" class="text-sm text-[#4ea8ed] font-mono">|attach|</LinkElement>
                 </div>
                 <Share class="absolute left-[10px] top-[-9px] block sm:hidden" />
                 <ThemeSwitch class="absolute right-[10px] top-[-9px] block sm:hidden" />
@@ -87,6 +89,10 @@ const App: Component = () => {
                                 } else if (isExperiences(section)) {
                                     return (
                                         <Experiences title={sectionName} experiences={section.experiences} default_opened={section.default_opened || false} />
+                                    );
+                                } else if (typeof section == "boolean") {
+                                    return (
+                                        <PageStats />
                                     );
                                 }
                                 return <></>;
@@ -116,10 +122,10 @@ const App: Component = () => {
                     }
                     <footer>
                         <div class={`px-[20px] sm:px-[60px] flex align-center items-center py-[30px] ${colors.text['link-content']}`}>
-                            <a href="https://github.com/ZackarySantana/Attach" target="_blank">
+                            <LinkElement href="https://github.com/ZackarySantana/Attach" target="_blank">
                                 <p class="text-sm">Putting the power of connecting in to the hands of the user. Theme <code>{colors.name}</code></p>
                                 <h3>Click here to make your own <span class="text-[#4ea8ed] font-mono">|attach|</span></h3>
-                            </a>
+                            </LinkElement>
                         </div>
                     </footer>
                 </main>

@@ -2,7 +2,6 @@
 import { Sections } from "./app/App";
 import { Link } from "./app/links";
 import { Experience } from "./app/experinces";
-import { Post } from "./app/posts";
 import { ExtendedProfile, Images } from "./app/profile";
 /* Type Imports - DO NOT TOUCH */
 
@@ -181,6 +180,7 @@ export const sections = {
     "📧 Contact Me": {
         links: contactme_list,
     },
+    "Page Stats": true,
 } as Sections;
 
 export const webpage_config = {

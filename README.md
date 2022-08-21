@@ -42,6 +42,14 @@ Install the [technologies](#technologies) by running
 npm install
 ```
 
+<i>Make sure you have followed [installing and setting up fly](#fly)</i>
+
+Setup your volume (this is so your stats can be persistent!)
+
+```
+fly volumes create stats_data
+```
+
 And deploy to the web with
 
 ```
@@ -73,7 +81,7 @@ The page will reload if you make edits.<br>
 
 ### Fly
 
-Make sure to install [Fly.io](https://fly.io) (You don't need Docker to deploy this project!). You'll need to setup Fly by following their [docs](https://fly.io/docs/speedrun/), and then run `fly launch`. You should select yes to copy the existing fly.toml (configuration file) to this project, and give it any name you want!
+Make sure to install [Fly.io](https://fly.io) (You don't need Docker to deploy this project!). You'll need to setup Fly by following their [docs](https://fly.io/docs/speedrun/).
 
 ### Locally
 
