@@ -91,6 +91,16 @@ const projects_list = [
         url: "https://twitterst.fly.dev/",
         title: "Twitter Filter",
     },
+    {
+        url: "https://codeconstants.com/",
+        icon: "/icons/CodeConstants.png",
+        title: "Code Constants",
+    },
+    {
+        url: "https://upefiu.io/",
+        icon: "/icons/upe.png",
+        title: "UPE",
+    },
 ] as Link[];
 
 const experiences = [
@@ -134,6 +144,14 @@ const games_list = [
     {
         url: "https://videos.zackaryjamessantana.com/spacefrontier/",
         title: "Space Frontier",
+    },
+    {
+        url: "https://videos.zackaryjamessantana.com/spacefrontier/",
+        title: "Space Frontier",
+    },
+    {
+        url: "https://rachelquijano.itch.io/chainsaw-the-door/",
+        title: "Chainsaw The Door",
     },
 ] as Link[];
 
