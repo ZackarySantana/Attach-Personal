@@ -36,8 +36,8 @@ export default defineConfig({
                                     width: name.includes("profile")
                                         ? 150
                                         : name.includes("banner")
-                                        ? 455
-                                        : undefined,
+                                            ? 455
+                                            : undefined,
                                     height: name.includes("banner")
                                         ? 130
                                         : undefined,
@@ -50,13 +50,13 @@ export default defineConfig({
                                         .toFormat("webp", { quality: 70 })
                                         .toFile(
                                             folder +
-                                                "/" +
-                                                name.replace(
-                                                    /\.[^/.]+$/,
-                                                    ".webp"
-                                                )
+                                            "/" +
+                                            name.replace(
+                                                /\.[^/.]+$/,
+                                                ".webp"
+                                            )
                                         )
-                                        .then(() => {})
+                                        .then(() => { })
                                         .catch((e) =>
                                             console.log(
                                                 "Failed converting",
@@ -78,7 +78,7 @@ export default defineConfig({
                         );
 
                         Promise.all(promises)
-                            .then(() => {})
+                            .then(() => { })
                             .catch((e) => console.error(e));
                     },
                 },
@@ -95,12 +95,10 @@ export default defineConfig({
                         <meta property="og:updated_time" content="${Date.now()}" />
                         <meta property="og:image:type" content="image/png" />
                         <meta property="og:image:alt" content="Profile" />
-                        <meta property="profile:first_name" content="${
-                            bp.first_name
-                        }">
-                        <meta property="profile:last_name" content="${
-                            bp.last_name
-                        }">
+                        <meta property="profile:first_name" content="${bp.first_name
+                            }">
+                        <meta property="profile:last_name" content="${bp.last_name
+                            }">
                         `;
 
                         if (ep.username) {

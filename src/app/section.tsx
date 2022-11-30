@@ -6,7 +6,7 @@ const Section = (props: { title: string; solo?: boolean; default_opened: boolean
     const opened_LS = localStorage.getItem(props.title);
 
     let ref: HTMLDivElement | undefined;
-    const [open, setOpen] = createSignal(typeof opened_LS === "string" ? JSON.parse(opened_LS) : (props.solo ?? props.default_opened));
+    const [open, setOpen] = createSignal(typeof opened_LS === "string" ? opened_LS.toLowerCase() == "true" : (props.solo ?? props.default_opened));
     const [height, setHeight] = createSignal("10000px");
 
     createEffect(() => {

@@ -29,9 +29,6 @@ export function isExperiences(obj: any): obj is Experiences {
     return obj.experiences !== undefined;
 }
 
-export const [page, setPage] = createSignal<JSX.Element>();
-export const [rollHome, setRollHome] = createSignal(false);
-
 const App: Component = () => {
 
     document.documentElement.classList.add(colors.bg.main);
@@ -72,7 +69,7 @@ const App: Component = () => {
                 <ThemeSwitch class="absolute right-[10px] top-[-9px] block sm:hidden" />
             </nav>
             <div class={`relative ${colors.text.base}`}>
-                <main class={`transition-all duration-[250ms] ${rollHome() ? "translate-x-[-120%] opacity-0" : ""}`}>
+                <main class={`transition-all duration-[250ms]`}>
                     <Profile />
                     {Object.keys(sections).length > 1 &&
                         <For each={Object.keys(sections)}>
@@ -129,7 +126,6 @@ const App: Component = () => {
                         </div>
                     </footer>
                 </main>
-                {page()}
             </div>
         </>
     );

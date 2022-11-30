@@ -136,14 +136,71 @@ const experiences = [
     },
 ] as Experience[];
 
+const education = [
+    {
+        company: "Florida International University",
+        meta: [
+            "Major: Computer Science",
+            "Jul 2022 - April 2023",
+            "Miami, FL",
+        ],
+        icon: "/icons/fiu.png",
+        desc: [
+            "Courses: Advance UNIX Programming, Algorithm Techniques, Artificial Intelligence, Data Mining, Data Structures, Database Administration,\
+            Database Management, Computational Geometry, Human-Computer Interaction, Mobile App Dev, Programming Languages, Operating Systems, Software Engineering",
+        ],
+    },
+    {
+        meta: [
+            "Minor: Mathematical Science",
+        ],
+        icon: "none",
+        desc: [
+            "Courses: Calculus I, Calculus II, Calculus III, Differential Equations, Linear Algebra",
+        ],
+    },
+    {
+        meta: [
+            "Minor: Physics",
+        ],
+        icon: "none",
+        desc: [
+            "Courses: Physics I, Physics II, Modern Physics, Intermediate Physics Lab, Observational Astronomy",
+        ],
+    },
+    {
+        company: "GitHub Global Campus Student",
+        meta: [
+            "GitHub",
+            "Certificate",
+            "Sep 2022",
+        ],
+        icon: "/icons/github.svg",
+    },
+    {
+        company: "Android Development Honors",
+        meta: [
+            "CodePath",
+            "Certificate",
+            "Nov 2021",
+        ],
+        icon: "/icons/codepath.png",
+    },
+    {
+        company: "Wilderness First Responder",
+        meta: [
+            "University of Colorado School of Medicine",
+            "Certificate",
+            "May 2021",
+        ],
+        icon: "/icons/ucsm.jpg",
+    },
+] as Experience[];
+
 const games_list = [
     {
         url: "https://zackaryjamessantana.com/hosted_projects/rpg.html",
         title: "RPG",
-    },
-    {
-        url: "https://videos.zackaryjamessantana.com/spacefrontier/",
-        title: "Space Frontier",
     },
     {
         url: "https://videos.zackaryjamessantana.com/spacefrontier/",
@@ -192,7 +249,11 @@ export const sections = {
     "💼 Work Experience": {
         experiences: experiences,
     },
-    "🧠 Games": {
+    // An example of an experience section
+    "🧠 Education": {
+        experiences: education,
+    },
+    "🎮 Games": {
         links: games_list,
     },
     "📧 Contact Me": {

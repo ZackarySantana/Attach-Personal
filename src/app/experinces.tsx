@@ -18,9 +18,12 @@ const Experiences = (props: { title: string; experiences: Experience[]; solo?: b
                 {(experience: Experience) => (
                     <div class="relative w-full h-fit flex items-center pr-8 py-5">
                         <div class={`absolute inset-[0] left-[25px] z-[-1] rounded-lg ${colors.bg.links}`}></div>
-                        <Icon icon={experience.icon ? experience.icon : attach_logo} title={props.title} class="self-start" />
+                        {experience.icon != "none" ?
+                            <Icon icon={experience.icon ? experience.icon : attach_logo} title={props.title} class="self-start" /> :
+                            <div class={`w-[50px]`} />}
+
                         <div class={`w-full overflow-hidden leading-5 pl-4`}>
-                            <h3 class="font-bold">{experience.company}</h3>
+                            {experience.company && <h3 class="font-bold">{experience.company}</h3>}
                             <div class={`${colors.text['link-content']} text-sm leading-4 pl-3 relative`}>
                                 <div class={`absolute top-[11%] left-[2px] w-[2px] h-[80%] rounded-sm ${colors.skills.line}`}></div>
                                 <For each={experience.meta}>

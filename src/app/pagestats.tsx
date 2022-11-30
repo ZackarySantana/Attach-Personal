@@ -3,6 +3,9 @@ import { colors } from '../config';
 
 const fetchStat = async (path: string) => {
     const res = await fetch(`/${path}`);
+    if (res.status != 200 || res.headers.get("content-type") != "application/json") {
+        return 0;
+    }
     const json = await res.json();
     const amount = json[path];
     localStorage.setItem(path, amount);
@@ -15,10 +18,10 @@ const PageStats = () => {
     const [page_views] = createResource("page_views", fetchStat);
     const [likes, { mutate }] = createResource("likes", fetchStat);
     const liked_LS = localStorage.getItem("liked");
-    const [liked, setLiked] = createSignal(typeof liked_LS === "string" ? JSON.parse(liked_LS) : false);
+    const [liked, setLiked] = createSignal(typeof liked_LS === "string" ? liked_LS.toLowerCase() == "true" : false);
 
     createEffect(() => {
-        localStorage.setItem("liked", liked());
+        localStorage.setItem("liked", liked() + "");
     });
 
     return (
