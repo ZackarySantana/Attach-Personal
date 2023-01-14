@@ -178,6 +178,15 @@ const education = [
         icon: "/icons/codepath.png",
     },
     {
+        company: "Stack Overflow Student Ambassadors",
+        meta: [
+            "Stack Overflow",
+            "Certificate",
+            "Sep 2022",
+        ],
+        icon: "/icons/codepath.png",
+    },
+    {
         company: "GitHub Global Campus Student",
         meta: [
             "GitHub",
@@ -185,6 +194,15 @@ const education = [
             "Sep 2022",
         ],
         icon: "/icons/github.svg",
+    },
+    {
+        company: "Android Development Honors",
+        meta: [
+            "CodePath",
+            "Certificate",
+            "Nov 2021",
+        ],
+        icon: "/icons/codepath.png",
     },
     {
         company: "Wilderness First Responder",
