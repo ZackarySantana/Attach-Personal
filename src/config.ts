@@ -83,15 +83,6 @@ const projects_list = [
         title: "Portfolio",
     },
     {
-        url: "https://todo.zackaryjamessantana.com/",
-        icon: "/icons/todo.svg",
-        title: "Todo",
-    },
-    {
-        url: "https://twitterst.fly.dev/",
-        title: "Twitter Filter",
-    },
-    {
         url: "https://codeconstants.com/",
         icon: "/icons/CodeConstants.png",
         title: "Code Constants",
@@ -100,6 +91,15 @@ const projects_list = [
         url: "https://upefiu.io/",
         icon: "/icons/upe.png",
         title: "UPE",
+    },
+    {
+        url: "https://todo.zackaryjamessantana.com/",
+        icon: "/icons/todo.svg",
+        title: "Todo",
+    },
+    {
+        url: "https://twitterst.fly.dev/",
+        title: "Twitter Filter",
     },
 ] as Link[];
 
@@ -141,7 +141,7 @@ const education = [
         company: "Florida International University",
         meta: [
             "Major: Computer Science",
-            "Jul 2022 - April 2023",
+            "Jul 2020 - Expected Graduation April 2023",
             "Miami, FL",
         ],
         icon: "/icons/fiu.png",
@@ -169,6 +169,15 @@ const education = [
         ],
     },
     {
+        company: "Intermediate iOS Development",
+        meta: [
+            "CodePath",
+            "Certificate",
+            "Dec 2022",
+        ],
+        icon: "/icons/codepath.png",
+    },
+    {
         company: "GitHub Global Campus Student",
         meta: [
             "GitHub",
@@ -176,15 +185,6 @@ const education = [
             "Sep 2022",
         ],
         icon: "/icons/github.svg",
-    },
-    {
-        company: "Android Development Honors",
-        meta: [
-            "CodePath",
-            "Certificate",
-            "Nov 2021",
-        ],
-        icon: "/icons/codepath.png",
     },
     {
         company: "Wilderness First Responder",
