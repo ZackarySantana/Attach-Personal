@@ -28,7 +28,7 @@ export const base_profile = {
     first_name: "Zackary",
     last_name: "Santana",
     subtitle: "Software Engineer, Fullstack",
-    bio: ["MongoDB", "Miami, FL", "Florida International University"],
+    bio: ["I bring about amazing websites", "Miami, FL", "Florida International University"],
     name() {
         return this.first_name + " " + this.last_name;
     },
@@ -41,6 +41,7 @@ export const extended_profile = {
 
 export const skillsList = [
     "TypeScript",
+    "Golang",
     "React.js",
     "Express.js",
     "Remix.js",
@@ -83,12 +84,17 @@ const projects_list = [
         title: "Portfolio",
     },
     {
+        url: "https://weekdays.fly.dev/",
+        icon: "/icons/portfolio.svg",
+        title: "Portfolio",
+    },
+    {
         url: "https://codeconstants.com/",
         icon: "/icons/CodeConstants.png",
         title: "Code Constants",
     },
     {
-        url: "https://upefiu.io/",
+        url: "https://flow-test.fly.dev/",
         icon: "/icons/upe.png",
         title: "UPE",
     },
@@ -104,6 +110,19 @@ const projects_list = [
 ] as Link[];
 
 const experiences = [
+    {
+        company: "Addigy",
+        meta: [
+            "Junior Software Engineer",
+            "Jan 2023 - Current",
+            "Miami, FL",
+        ],
+        icon: "/icons/addigy.png",
+        desc: [
+            "Worked in a lean kanban agile team focusing on providing a macOS VM infrastructure for maximizing resources on AWS EC2 instances.",
+            "Planned, architecture, and built Golang REST server using Gin, GORM, GoCron, and SQLite that manages requests at scale, with built-in body validation.",
+        ],
+    },
     {
         company: "MongoDB",
         meta: [
