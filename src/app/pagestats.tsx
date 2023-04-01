@@ -3,7 +3,7 @@ import { colors } from '../config';
 
 const fetchStat = async (path: string) => {
     const res = await fetch(`/${path}`);
-    if (res.status != 200 || res.headers.get("content-type") != "application/json") {
+    if (res.status != 200 || !res.headers.get("content-type")?.includes("application/json")) {
         return 0;
     }
     const json = await res.json();

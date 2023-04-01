@@ -45,11 +45,11 @@ readFile(clicks_file, (data) => {
 });
 
 app.get("/page_views", (_, res) => {
-    res.send(JSON.stringify({ page_views: app.locals.page_views }));
+    res.send({ page_views: app.locals.page_views });
 });
 
 app.get("/likes", (_, res) => {
-    res.send(JSON.stringify({ likes: app.locals.likes }));
+    res.send({ likes: app.locals.likes });
 });
 
 app.get("/stats", (_, res) => {
