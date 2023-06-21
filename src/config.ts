@@ -1,7 +1,7 @@
 /* Type Imports - DO NOT TOUCH */
 import { Sections } from "./app/App";
-import { Link } from "./app/links";
 import { Experience } from "./app/experinces";
+import { Link } from "./app/links";
 import { ExtendedProfile, Images } from "./app/profile";
 /* Type Imports - DO NOT TOUCH */
 
@@ -40,7 +40,25 @@ export const extended_profile = {
 } as ExtendedProfile;
 
 export const skillsList = [
+    "Golang",
+    "Kubernetes",
+    "Lens",
+    "Docker",
+    "MongoDB",
+    "PlanetScale",
+    "BigQuery",
+    "Splunk",
     "TypeScript",
+    "React",
+    "Next",
+    "Node",
+    "Vite",
+    "Tailwind",
+]
+
+export const skillsListAll = [
+    "TypeScript",
+    "JavaScript",
     "Golang",
     "React.js",
     "Express.js",
@@ -55,6 +73,8 @@ export const skillsList = [
     "Java",
     "Svelte",
     "Firebase",
+    "PlanetScale",
+    "Drizzle ORM",
     "Splunk",
     "MongoDB",
     "MySQL",
@@ -79,12 +99,12 @@ There are no required links, but each link must have:
  */
 const projects_list = [
     {
-        url: "https://zackaryjamessantana.com/",
-        icon: "/icons/portfolio.svg",
-        title: "Portfolio",
+        url: "https://weekdays.pro/",
+        icon: "/icons/weekdays.png",
+        title: "Weekdays",
     },
     {
-        url: "https://weekdays.fly.dev/",
+        url: "https://zackaryjamessantana.com/",
         icon: "/icons/portfolio.svg",
         title: "Portfolio",
     },
@@ -119,8 +139,9 @@ const experiences = [
         ],
         icon: "/icons/addigy.png",
         desc: [
-            "Worked in a lean kanban agile team focusing on providing a macOS VM infrastructure for maximizing resources on AWS EC2 instances.",
-            "Planned, architecture, and built Golang REST server using Gin, GORM, GoCron, and SQLite that manages requests at scale, with built-in body validation.",
+            "Developed among a fleet of microservices that all interconnect and are responsible for a different aspect of the product. This meant a business outcome often affected many microservices, 3-4 on average.",
+            "Developed on 5+ microservices that expose CRUD endpoints and store data via a MongoDB and SQLite databases, deployed in a Kubernetes cluster using Lens to monitor the cluster.",
+            "Created a new webhooks callout consumer service and webhooks manager service in Golang to sync 200 different accounts with around 3000+ users using 3rd party integrations.",
         ],
     },
     {
@@ -132,11 +153,10 @@ const experiences = [
         ],
         icon: "/icons/mongodb.svg",
         desc: [
-            "Worked on a scrum (agile) team for MongoDB's internal CI/CD testing tool, Evergreen (https://github.com/evergreen-ci/evergreen).",
-            "Used Golang to create new REST endpoints, manage existing ones, and create middleware.",
-            "Augmented the CLI to allow users to do actions that were previously restricted like using regex to find what tests to do on which builds and run that test-suite.",
-            "Modified core infrastructure of archiving tests and scheduling/restarting logic of tests.",
-            "Created new functionality that restarts a subset of tests for the user and systematically keeps track of non-restarted and restarted tests for the same test-suite.",
+            "Direct experience working on distributed systems internal facing CI/CD testing tooling, handling 1-2 engineering requests every week from other engineers at MongoDB, dog-feeding and pushing those updates live to increase other team velocities.",
+            "This ranged from changing the CLI to accept new flags, represent new database models, or fix commands under certain conditions like overriding defaults, to creating/adjusting REST endpoints to better align with the docs.",
+            "Concurrently worked on uncoupling archiving and restarting logic for tests to allow for specific grouping of tests to restart only failed- teams often used these groupings with 800+ tests that would run on average for 2 hours. Restarting them before would restart all tests, with my changes it would cut down the restarted tests from 800+ → 1-5, this reduced restart time/machine usage by up to 90%.",
+            "Used tools like Splunk to query and test about the data of restarted tests, creating new pipelines in MongoDB to support the database model changes, Golang as the primary language for the tooling, TypeScript/React.js for UI changes.",
         ],
     },
     {
@@ -148,9 +168,8 @@ const experiences = [
         ],
         icon: "/icons/metlife.png",
         desc: [
-            "Managed and maintained a frontend Angular.js application that displayed real-time information that was vital for the team.",
-            "Organized the backend Restify that interacted with a MongoDB that used endpoints to test status of Java Virtual Machines.",
-            "Worked in a SAFe Agile team that used scrum to keep track with the day-to-day process.",
+            "Improved the UX (user experience) of the department-wide smoke test website used by 200+ teams. The site previously had blocked executions of similar requests in multiple sections of the site and would not cache responses even on the same client session. Implemented coinciding execution of requests bringing the site from a 10 seconds-30 seconds on a cold start down to 1 second.",
+            "Migrated queries to MongoDB to the backend (Restifiy) and pinging endpoints (JVM’s) to the frontend (Angular.js) which reduced server load, improved overall server response time, and resulted in a fast TTFB (Time-to-first-byte).",
         ],
     },
 ] as Experience[];
@@ -160,7 +179,7 @@ const education = [
         company: "Florida International University",
         meta: [
             "Major: Computer Science",
-            "Jul 2020 - Expected Graduation April 2023",
+            "Jul 2020 - Aug 2023",
             "Miami, FL",
         ],
         icon: "/icons/fiu.png",
@@ -175,16 +194,7 @@ const education = [
         ],
         icon: "none",
         desc: [
-            "Courses: Calculus I, Calculus II, Calculus III, Differential Equations, Linear Algebra",
-        ],
-    },
-    {
-        meta: [
-            "Minor: Physics",
-        ],
-        icon: "none",
-        desc: [
-            "Courses: Physics I, Physics II, Modern Physics, Intermediate Physics Lab, Observational Astronomy",
+            "Courses: Calculus I, Calculus II, Calculus III, Differential Equations, Linear Algebra, Physics I, Physics II, Modern Physics, Intermediate Physics Lab",
         ],
     },
     {
@@ -203,7 +213,7 @@ const education = [
             "Certificate",
             "Sep 2022",
         ],
-        icon: "/icons/codepath.png",
+        icon: "/icons/stackoverflow.png",
     },
     {
         company: "GitHub Global Campus Student",

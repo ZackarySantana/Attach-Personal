@@ -244,7 +244,49 @@ const firery = {
     },
 };
 
-const themes = [pinkish, blueish, ocean, dracula, light_fire];
+// mongodb theme
+const mongodb = {
+    name: "MongoDB",
+    text: {
+        base: "text-[#e8e7d5]",
+        subtitle: "text-[#e8e7d5]",
+        bio: "text-[#e8e7d5]",
+        button: "text-[#e8e7d5]",
+        "link-content": "text-[#e8e7d5]",
+    },
+    bg: {
+        profile: "bg-[#3fa037]",
+        links: "bg-[#3fa037]",
+
+        mask_links: "mask-image-[#3fa037]", // This should be the same as 'links'. This is to allow for disappearing text for short devices.
+        main: "bg-[#3f3e42]",
+        button: "bg-[#3fa037]",
+    },
+    skills: {
+        bg: "bg-[#4db33d]",
+        text: "text-[#FFFFFF]",
+        line: "bg-[#4db33d]",
+    },
+    banner: {
+        border: "border-[#4db33d]",
+        "from-transparent": true,
+        "to-transparent": false,
+    },
+    links_icon: {
+        "from-transparent": false,
+        "to-transparent": false,
+    },
+    gradient: {
+        from: "from-[#4db33d]",
+        to: "to-[#4db33d]",
+    },
+    arrow: {
+        expand: "fill-[#e8e7d5]",
+        download: "fill-white",
+    },
+};
+
+const themes = [pinkish, blueish, ocean, dracula, light_fire, mongodb];
 const funky = [...themes, firery];
 
 function fromParams(params: URLSearchParams) {
@@ -265,6 +307,8 @@ function fromParams(params: URLSearchParams) {
                 return light_fire;
             case "firery":
                 return firery;
+            case "mongodb":
+                return mongodb;
         }
     }
     return null;
