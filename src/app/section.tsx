@@ -29,7 +29,7 @@ const Section = (props: { title: string; solo?: boolean; default_opened: boolean
                 </button>
             }
             <div class={`overflow-hidden transition-all duration-[300ms] ${open() ? "mb-3" : ""}`} style={{ "max-height": `${open() ? height() : "0px"}` }}>
-                <div ref={ref} class="flex flex-col gap-3">
+                <div ref={ref} class="flex flex-col gap-3 items-end">
                     {props.children}
                 </div>
             </div>

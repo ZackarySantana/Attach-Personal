@@ -1,4 +1,4 @@
-import { createEffect, createSignal, For, onMount } from 'solid-js';
+import { For } from 'solid-js';
 import { colors } from '../config';
 
 import attach_logo from "../assets/attach/attach_logo_full_v2.png";
@@ -16,7 +16,7 @@ const Experiences = (props: { title: string; experiences: Experience[]; solo?: b
         <Section title={props.title} solo={props.solo} default_opened={props.default_opened} >
             <For each={props.experiences}>
                 {(experience: Experience) => (
-                    <div class="relative w-full h-fit flex items-center pr-8 py-5">
+                    <div class="relative h-fit flex items-center pr-8 py-5 w-[95%]">
                         <div class={`absolute inset-[0] left-[25px] z-[-1] rounded-lg ${colors.bg.links}`}></div>
                         {experience.icon != "none" ?
                             <Icon icon={experience.icon ? experience.icon : attach_logo} title={props.title} class="self-start" /> :
