@@ -28,7 +28,11 @@ export const base_profile = {
     first_name: "Zackary",
     last_name: "Santana",
     subtitle: "Software Engineer, Fullstack",
-    bio: ["I bring about amazing websites", "Miami, FL", "Florida International University"],
+    bio: [
+        "I bring about amazing websites",
+        "Miami, FL",
+        "Florida International University",
+    ],
     name() {
         return this.first_name + " " + this.last_name;
     },
@@ -54,7 +58,7 @@ export const skillsList = [
     "Node",
     "Vite",
     "Tailwind",
-]
+];
 
 export const skillsListAll = [
     "TypeScript",
@@ -99,6 +103,10 @@ There are no required links, but each link must have:
  */
 const projects_list = [
     {
+        url: "https://howsit.dev/",
+        title: "How's It",
+    },
+    {
         url: "https://weekdays.pro/",
         icon: "/icons/weekdays.png",
         title: "Weekdays",
@@ -131,12 +139,18 @@ const projects_list = [
 
 const experiences = [
     {
-        company: "Addigy",
+        company: "MongoDB",
         meta: [
-            "Junior Software Engineer",
-            "Jan 2023 - Current",
-            "Miami, FL",
+            "Software Engineer Intern",
+            "Aug 2022 - Current",
+            "New York, New York",
         ],
+        icon: "/icons/mongodb.svg",
+        desc: [],
+    },
+    {
+        company: "Addigy",
+        meta: ["Junior Software Engineer", "Jan 2023 - Jul 2023", "Miami, FL"],
         icon: "/icons/addigy.png",
         desc: [
             "Developed among a fleet of microservices that all interconnect and are responsible for a different aspect of the product. This meant a business outcome often affected many microservices, 3-4 on average.",
@@ -177,11 +191,7 @@ const experiences = [
 const education = [
     {
         company: "Florida International University",
-        meta: [
-            "Major: Computer Science",
-            "Jul 2020 - Aug 2023",
-            "Miami, FL",
-        ],
+        meta: ["Major: Computer Science", "Jul 2020 - Aug 2023", "Miami, FL"],
         icon: "/icons/fiu.png",
         desc: [
             "Courses: Advance UNIX Programming, Algorithm Techniques, Artificial Intelligence, Data Mining, Data Structures, Database Administration,\
@@ -189,9 +199,7 @@ const education = [
         ],
     },
     {
-        meta: [
-            "Minor: Mathematical Science",
-        ],
+        meta: ["Minor: Mathematical Science"],
         icon: "none",
         desc: [
             "Courses: Calculus I, Calculus II, Calculus III, Differential Equations, Linear Algebra, Physics I, Physics II, Modern Physics, Intermediate Physics Lab",
@@ -199,38 +207,22 @@ const education = [
     },
     {
         company: "Intermediate iOS Development",
-        meta: [
-            "CodePath",
-            "Certificate",
-            "Dec 2022",
-        ],
+        meta: ["CodePath", "Certificate", "Dec 2022"],
         icon: "/icons/codepath.png",
     },
     {
         company: "Stack Overflow Student Ambassadors",
-        meta: [
-            "Stack Overflow",
-            "Certificate",
-            "Sep 2022",
-        ],
+        meta: ["Stack Overflow", "Certificate", "Sep 2022"],
         icon: "/icons/stackoverflow.png",
     },
     {
         company: "GitHub Global Campus Student",
-        meta: [
-            "GitHub",
-            "Certificate",
-            "Sep 2022",
-        ],
+        meta: ["GitHub", "Certificate", "Sep 2022"],
         icon: "/icons/github.svg",
     },
     {
         company: "Android Development Honors",
-        meta: [
-            "CodePath",
-            "Certificate",
-            "Nov 2021",
-        ],
+        meta: ["CodePath", "Certificate", "Nov 2021"],
         icon: "/icons/codepath.png",
     },
     {
