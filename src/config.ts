@@ -103,6 +103,10 @@ There are no required links, but each link must have:
  */
 const projects_list = [
     {
+        url: "https://autumn-cl.com/",
+        title: "Autumn-Changelog",
+    },
+    {
         url: "https://howsit.dev/",
         title: "How's It",
     },
@@ -140,17 +144,15 @@ const projects_list = [
 const experiences = [
     {
         company: "MongoDB",
-        meta: [
-            "Software Engineer Intern",
-            "Aug 2022 - Current",
-            "New York, New York",
-        ],
+        position: "Software Engineer II",
+        meta: ["Aug 2023 - Current", "New York, New York"],
         icon: "/icons/mongodb.svg",
         desc: [],
     },
     {
         company: "Addigy",
-        meta: ["Junior Software Engineer", "Jan 2023 - Jul 2023", "Miami, FL"],
+        position: "Junior Software Engineer",
+        meta: ["Jan 2023 - Jul 2023", "Miami, FL"],
         icon: "/icons/addigy.png",
         desc: [
             "Developed among a fleet of microservices that all interconnect and are responsible for a different aspect of the product. This meant a business outcome often affected many microservices, 3-4 on average.",
@@ -159,12 +161,18 @@ const experiences = [
         ],
     },
     {
-        company: "MongoDB",
-        meta: [
-            "Software Engineer Intern",
-            "Jun 2022 - Aug 2022",
-            "New York, New York",
+        company: "4Geeks Academy",
+        position: "Fullstack Bootcamp Instructor",
+        meta: ["Sep 2022 - Jan 2023", "Miami, FL"],
+        // icon: "/icons/addigy.png", TBA
+        desc: [
+            "Guided 11 students on HTML, CSS, JavaScript, Node.js/NPM, Jest, React.js, React Flux & Context API, Python, SQLAlchemy, Flask, and REST API's.",
         ],
+    },
+    {
+        company: "MongoDB",
+        position: "Software Engineer Intern",
+        meta: ["Jun 2022 - Aug 2022", "New York, New York"],
         icon: "/icons/mongodb.svg",
         desc: [
             "Direct experience working on distributed systems internal facing CI/CD testing tooling, handling 1-2 engineering requests every week from other engineers at MongoDB, dog-feeding and pushing those updates live to increase other team velocities.",
@@ -175,11 +183,8 @@ const experiences = [
     },
     {
         company: "MetLife",
-        meta: [
-            "Software Engineer Intern",
-            "Jun 2021 - Aug 2021",
-            "Cary, North Carolina",
-        ],
+        position: "Software Engineer Intern",
+        meta: ["Jun 2021 - Aug 2021", "Cary, North Carolina"],
         icon: "/icons/metlife.png",
         desc: [
             "Improved the UX (user experience) of the department-wide smoke test website used by 200+ teams. The site previously had blocked executions of similar requests in multiple sections of the site and would not cache responses even on the same client session. Implemented coinciding execution of requests bringing the site from a 10 seconds-30 seconds on a cold start down to 1 second.",
