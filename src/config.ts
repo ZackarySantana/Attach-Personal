@@ -107,6 +107,10 @@ const projects_list = [
         title: "Autumn-Changelog",
     },
     {
+        url: "https://marketplace.visualstudio.com/items?itemName=ZackarySantana.grove",
+        title: "CI/CD VSCode Extension",
+    },
+    {
         url: "https://howsit.dev/",
         title: "How's It",
     },
