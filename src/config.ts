@@ -45,18 +45,13 @@ export const extended_profile = {
 
 export const skillsList = [
     "Golang",
-    "Kubernetes",
-    "Lens",
+    "TypeScript",
+    "MCP",
     "Docker",
     "MongoDB",
-    "PlanetScale",
-    "BigQuery",
     "Splunk",
-    "TypeScript",
+    "Kubernetes",
     "React",
-    "Next",
-    "Node",
-    "Vite",
     "Tailwind",
 ];
 
@@ -111,7 +106,7 @@ const projects_list = [
         title: "CI/CD VSCode Extension",
     },
     {
-        url: "https://howsit.dev/",
+        url: "https://howsit.fly.dev/",
         title: "How's It",
     },
     {
@@ -140,7 +135,7 @@ const projects_list = [
         title: "Todo",
     },
     {
-        url: "https://twitterst.fly.dev/",
+        url: "https://github.com/ZackarySantana/TwitterFilter",
         title: "Twitter Filter",
     },
 ] as Link[];
@@ -148,9 +143,16 @@ const projects_list = [
 const experiences = [
     {
         company: "MongoDB",
-        position: "Software Engineer II",
-        meta: ["Aug 2023 - Current", "New York, New York"],
+        position: "Software Engineer III",
+        meta: ["Jan 2024 - Current", "Miami, Florida"],
         icon: "/icons/mongodb.svg",
+        desc: [],
+    },
+    {
+        company: "MongoDB",
+        position: "Software Engineer II",
+        meta: ["Aug 2023 - Dec 2024", "New York, New York"],
+        icon: "none",
         desc: [],
     },
     {
@@ -272,10 +274,10 @@ const contactme_list = [
         title: "GitHub",
     },
     {
-        url: "mailto: zsant014@fiu.edu",
+        url: "mailto: feedback@codeconstants.com",
         title: "Email",
         icon: "/icons/email.svg",
-        content: "zsant014@fiu.edu",
+        content: "feedback@codeconstants.com",
     },
 ] as Link[];
 
